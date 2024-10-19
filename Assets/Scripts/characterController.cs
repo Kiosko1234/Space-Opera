@@ -22,7 +22,7 @@ public class characterController : MonoBehaviour
 
         rb.position += direction * velocity * Time.fixedDeltaTime;
 
-        if (Input.GetKey(KeyCode.Space)) //move forwards when space pressed
+        if (Input.GetKey(KeyCode.Space) && (rb.position.y <= mousePos.y-1 || rb.position.y >= mousePos.y+1 || rb.position.x <= mousePos.x-1 || rb.position.x >= mousePos.x+1)) //move forwards when space pressed
         {        
             direction = (mousePos - rb.position).normalized; //gets the angle towards the mouse 
 
