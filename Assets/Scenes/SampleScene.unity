@@ -249,7 +249,7 @@ MonoBehaviour:
   rb: {fileID: 1949453122}
   cam: {fileID: 519420031}
   accel: 0.4
-  decel: 0.3
+  decel: 0.4
   velocity: 0
 --- !u!50 &1949453122
 Rigidbody2D:
