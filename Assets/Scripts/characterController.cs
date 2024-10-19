@@ -1,28 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class characterController : MonoBehaviour
 {
-    public float speed;
+    public float maxSpeed;
     public Rigidbody2D rb;
     public Camera cam;
     Vector2 mousePos;
     public float accel;
     public float decel;
     public float velocity;
+    Vector2 direction;
 
 
     void Update()
     {
         //gets mouse position on screen
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - rb.position).normalized; //gets the angle towards the mouse 
+
+        rb.position += direction * velocity * Time.fixedDeltaTime;
 
         if (Input.GetKey(KeyCode.Space)) //move forwards when space pressed
-        {
-            rb.position += direction * speed * Time.fixedDeltaTime;
+        {        
+            direction = (mousePos - rb.position).normalized; //gets the angle towards the mouse 
+
+            if (velocity <= maxSpeed)
+                velocity += accel* Time.fixedDeltaTime;
+            else
+                velocity = maxSpeed;
         }
+        else
+            if (velocity >= 0)
+            {
+                velocity -= decel* Time.fixedDeltaTime;
+                if (velocity <= 0)
+                    velocity = 0;
+            }
     }
 
     //this thing does the turning to mouse
