@@ -31,13 +31,16 @@ public class characterController : MonoBehaviour
             else
                 velocity = maxSpeed;
         }
-        else
+        else{
             if (velocity >= 0)
             {
                 velocity -= decel* Time.fixedDeltaTime;
                 if (velocity <= 0)
                     velocity = 0;
             }
+        }
+
+        
     }
 
     //this thing does the turning to mouse
@@ -47,4 +50,5 @@ public class characterController : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle; 
     }
+
 }
