@@ -20,26 +20,25 @@ public class characterController : MonoBehaviour
         //gets mouse position on screen
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        rb.position += direction * velocity * Time.fixedDeltaTime;
+        rb.position += direction * velocity * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Space) && (rb.position.y <= mousePos.y-1 || rb.position.y >= mousePos.y+1 || rb.position.x <= mousePos.x-1 || rb.position.x >= mousePos.x+1)) //move forwards when space pressed
         {        
             direction = (mousePos - rb.position).normalized; //gets the angle towards the mouse 
 
             if (velocity <= maxSpeed)
-                velocity += accel* Time.fixedDeltaTime;
+                velocity += accel* Time.deltaTime;
             else
                 velocity = maxSpeed;
         }
         else{
             if (velocity >= 0)
             {
-                velocity -= decel* Time.fixedDeltaTime;
+                velocity -= decel* Time.deltaTime;
                 if (velocity <= 0)
                     velocity = 0;
             }
         }
-
         
     }
 

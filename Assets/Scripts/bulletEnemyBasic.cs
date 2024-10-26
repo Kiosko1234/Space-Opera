@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class bulletBasic : MonoBehaviour
+public class bulletEnemyBasic : MonoBehaviour
 {
     public int damage;
     void Start()
@@ -12,9 +12,9 @@ public class bulletBasic : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+    private void OnTriggerEnter2D(Collider2D collision)  
     {
-        if(collision.tag == "Enemy")
+        if(collision.tag == "PlayerShip")
             {
             Destroy(this.gameObject);
             }
