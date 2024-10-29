@@ -18,5 +18,9 @@ public class bulletBasic : MonoBehaviour
             {
             Destroy(this.gameObject);
             }
+        if(this.gameObject.tag == "BulletP" && collision.tag == "BulletE")
+            Destroy(this.gameObject);
+        if(this.gameObject.tag == "BulletE" && collision.tag == "BulletP")
+            Destroy(this.gameObject);
     }
 }
