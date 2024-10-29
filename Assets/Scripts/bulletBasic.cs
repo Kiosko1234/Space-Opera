@@ -22,5 +22,8 @@ public class bulletBasic : MonoBehaviour
             Destroy(this.gameObject);
         if(this.gameObject.tag == "BulletE" && collision.tag == "BulletP")
             Destroy(this.gameObject);
+        if(collision.tag == "Planet")
+            Destroy(this.gameObject);
+
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - BulletE
   - PlayerShip
+  - Planet
   layers:
   - Default
   - TransparentFX

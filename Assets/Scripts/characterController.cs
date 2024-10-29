@@ -14,6 +14,11 @@ public class characterController : MonoBehaviour
     public float velocity;
     Vector2 direction;
 
+    void Start()
+    {
+        GameObject Camera = GameObject.FindGameObjectWithTag("MainCamera");
+        cam = Camera.GetComponent<Camera>();
+    }
 
     void Update()
     {

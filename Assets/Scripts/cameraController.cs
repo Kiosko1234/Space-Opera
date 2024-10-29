@@ -6,7 +6,13 @@ public class cameraController : MonoBehaviour
 {
     public Transform player;
     public Vector3 distancebetweencameraandplayer;
-    // Update is called once per frame
+
+    void Start()
+    {
+        GameObject PInstance = GameObject.FindGameObjectWithTag("PlayerShip");
+        player = PInstance.GetComponent<Transform>();
+    }
+
     void Update()
     {
         transform.position = player.position + distancebetweencameraandplayer;
