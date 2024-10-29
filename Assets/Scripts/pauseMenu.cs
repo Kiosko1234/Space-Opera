@@ -11,21 +11,27 @@ public class pauseMenu : MonoBehaviour
     public levelSelectMenu LevelSelectMenuScript;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(deathScreen.DeathScreenIsActive)
         {
-            if(GameIsPaused)
+        }
+        else
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            }
-            else if (levelSelectMenu.MenuOpened)
-            {
-                LevelSelectMenuScript.CloseMenu();
-            }
-            else
-            {
-                Pause();
-            }
-        }        
+                if(GameIsPaused)
+                {
+                    Resume();
+                }
+                else if (levelSelectMenu.MenuOpened && LevelSelectMenuScript != null)
+                {
+                    LevelSelectMenuScript.CloseMenu();
+                }
+                else
+                {
+                    Pause();
+                }
+            }    
+        }
     }
     public void Resume()
     {

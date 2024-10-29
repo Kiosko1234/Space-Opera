@@ -14,6 +14,8 @@ public class characterController : MonoBehaviour
     public float velocity;
     Vector2 direction;
 
+    public int HP;
+
     void Start()
     {
         GameObject Camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -44,7 +46,10 @@ public class characterController : MonoBehaviour
                     velocity = 0;
             }
         }
-        
+        if(HP<=0)
+        {
+            Die();
+        }    
     }
 
     //this thing does the turning to mouse
@@ -55,4 +60,18 @@ public class characterController : MonoBehaviour
         rb.rotation = angle; 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if (collision.tag == "BulletE")
+        {
+            bulletEnemyBasic bulletDamage = collision.GetComponent<bulletEnemyBasic>();
+
+            HP -= bulletDamage.damage;
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("you died lmao");
+    }
 }
