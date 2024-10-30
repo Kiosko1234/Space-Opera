@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 947780966843381209}
   m_Layer: 0
   m_Name: MeleeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4968,7 +4968,7 @@ MonoBehaviour:
   hp: 5
   hunting: 0
   idleStrgh: 0.7
-  dist: 0
+  visionDistance: 100
 --- !u!70 &947780966843381209
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

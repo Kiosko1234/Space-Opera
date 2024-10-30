@@ -4999,6 +4999,7 @@ MonoBehaviour:
   vel: 0
   hp: 3
   movementStyle: 0
+  visionDistance: 100
 --- !u!60 &2579770944752679568
 PolygonCollider2D:
   m_ObjectHideFlags: 0

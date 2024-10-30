@@ -18,17 +18,17 @@ public class meleeEnemyMovement : MonoBehaviour
     public int hp;
     public bool hunting = false; 
     public float idleStrgh;
-    public float dist;
+    public float visionDistance;
 
     void Start()
     { //load up the player
         GameObject player = GameObject.FindGameObjectWithTag("PlayerShip");
         playerRb = player.GetComponent<Rigidbody2D>();
-        StartCoroutine(randomIdleDirCoroutine());
+        //StartCoroutine(randomIdleDirCoroutine()); //this just didnt work at all
     }
     void  Update() {
         distanceToRPlyrPos = Vector2.Distance(rb.position, playerRb.position); //figure out the distance to player
-        if(distanceToRPlyrPos > 7 && distanceToRPlyrPos <= 10)
+        if(distanceToRPlyrPos > 7 && distanceToRPlyrPos <= visionDistance)
         {    
             lookDir = knownPlayerPos - rb.position;
         }
@@ -38,7 +38,7 @@ public class meleeEnemyMovement : MonoBehaviour
         }
             rb.position += lookDir * vel * Time.deltaTime;
 
-        if (distanceToRPlyrPos <= 10) //if player is in range
+        if (distanceToRPlyrPos <= visionDistance) //if player is in range
         {
             hunting = true;
             knownPlayerPos = playerRb.position;
@@ -83,26 +83,26 @@ public class meleeEnemyMovement : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    IEnumerator randomIdleDirCoroutine() //idle movement
-    {
-        while(true)
-        {
-            yield return new WaitForSeconds(4);
-            if (!hunting) //if were not hunting(havent seen the player yet), this thing is mostly working, i just have no idea why it can still go out of bounds but its unlikley. add a fix later
-            {
-                Vector2 RandVec; //making a random vector modifier
-                for (RandVec = new Vector2(Random.Range(-180f,180f),Random.Range(-180f,180f)); true; RandVec = new Vector2(Random.Range(-180f,180f),Random.Range(-180f,180f)))
-                {
-                    dist = Vector2.Distance(new Vector2(0,0), new Vector2(RandVec.x, RandVec.y)); //saving the distance between our combined vectors
-                    if(dist < 150) //if the new distance ends up in bounds than break
-                    {
-                        break;
-                    }
-                }
-                lookDir = new Vector2(RandVec.x, RandVec.y); //turn to the inbout position
-                vel = idleStrgh; //short burst of velocity
-            }
-        }
-    }
+    // IEnumerator randomIdleDirCoroutine() //idle movement
+    // {
+    //     while(true)
+    //     {
+    //         yield return new WaitForSeconds(4);
+    //         if (!hunting) //if were not hunting(havent seen the player yet), this thing is mostly working, i just have no idea why it can still go out of bounds but its unlikley. add a fix later
+    //         {
+    //             Vector2 RandVec; //making a random vector modifier
+    //             for (RandVec = new Vector2(Random.Range(-180f,180f),Random.Range(-180f,180f)); true; RandVec = new Vector2(Random.Range(-180f,180f),Random.Range(-180f,180f)))
+    //             {
+    //                 float dist = Vector2.Distance(new Vector2(0,0), new Vector2(RandVec.x, RandVec.y)); //saving the distance between our combined vectors
+    //                 if(dist < 150) //if the new distance ends up in bounds than break
+    //                 {
+    //                     break;
+    //                 }
+    //             }
+    //             lookDir = new Vector2(RandVec.x, RandVec.y); //turn to the inbout position
+    //             vel = idleStrgh; //short burst of velocity
+    //         }
+    //     }
+    // }
 
 }

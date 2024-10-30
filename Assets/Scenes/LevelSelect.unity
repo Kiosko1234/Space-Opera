@@ -842,7 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetName: Test
   Status: Occupied
-  Level: SampleScene
+  Level: Level1
   LevelSelectMenuScript: {fileID: 1507032484}
 --- !u!1 &802345041
 GameObject:

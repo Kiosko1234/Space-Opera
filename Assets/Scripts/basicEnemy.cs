@@ -18,6 +18,7 @@ public class basicEnemy : MonoBehaviour
     Vector2 lookDir;
     public int hp;
     public int movementStyle; //the way the enemy moves, 0 = basic, 1 = floaty 
+    public float visionDistance;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class basicEnemy : MonoBehaviour
             rb.AddForce(this.gameObject.transform.up * vel * Time.deltaTime);
         }
 
-        if (distanceToRPlyrPos <= 10)
+        if (distanceToRPlyrPos <= visionDistance)
         {
             knownPlayerPos = playerRb.position;
             if (vel <= maxSpeed && (distanceToRPlyrPos >= 5 || movementStyle == 1)) 

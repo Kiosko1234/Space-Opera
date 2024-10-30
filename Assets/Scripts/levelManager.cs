@@ -28,10 +28,8 @@ public class levelManager : MonoBehaviour
         Progression = 0;
         Complesion = 0;
 
-        for (int k=0;  k < InitialSpawn; k++)
-        {
-            Spawn(InitialSpawn);
-        }
+        Spawn(InitialSpawn);
+        
         StartCoroutine(spawnTimerCoroutine());
     }
     IEnumerator spawnTimerCoroutine()
