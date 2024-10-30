@@ -9,6 +9,10 @@ public class pauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public levelSelectMenu LevelSelectMenuScript;
+    void Start()
+    {
+        deathScreen.DeathScreenIsActive = false;
+    }
     void Update()
     {
         if(deathScreen.DeathScreenIsActive)

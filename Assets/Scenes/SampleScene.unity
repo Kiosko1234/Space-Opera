@@ -457,63 +457,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202538183}
   m_CullTransparentMesh: 1
---- !u!1001 &230553683
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5725096410631811731, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_Name
-      value: ScrapShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768940771172586355, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
 --- !u!1 &321392889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,6 +2650,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbca88e620ca104da05487bd4a89f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurShip: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
+  ShipPrefabs:
+  - {fileID: 5725096410631811731, guid: 895d3fc6fed26f149bbf4686cc488240, type: 3}
+  - {fileID: 5725096410631811731, guid: 36f404cbd5c9d404cac20bec3e8abd25, type: 3}
+  - {fileID: 5725096410631811731, guid: 8300cea57a05b7c41a5220e9c6845fce, type: 3}
+  - {fileID: 5725096410631811731, guid: 5e57575595456c14989246bb96542307, type: 3}
 --- !u!1 &2140331886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,4 +2900,3 @@ SceneRoots:
   - {fileID: 1776099478}
   - {fileID: 1384247788}
   - {fileID: 131579961}
-  - {fileID: 230553683}

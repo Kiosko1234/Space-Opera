@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -13,17 +14,26 @@ public class levelSelectMenu : MonoBehaviour
     public GameObject LevelSelectionUI;
     public TextMeshProUGUI PlanetNameUItext;
     public TextMeshProUGUI StatusUItext;
+    public TextMeshProUGUI SelectedShipUI;
 
     public string SelectedLevel;
+    public string[] UlockShipdex;
+    private int ShipSelector = 0;
+    [SerializeField]
+    private ShipSO CurShip;
 
-
-    // Update is called once per frame
+    
+    void Start()
+    {
+        UlockShipdex[0] = "Scrap";
+        UlockShipdex[1] = "Medium";
+        UlockShipdex[2] = "Small";    
+        UlockShipdex[3] = "Big";  
+        MenuOpened = false;  
+    }
     void Update()
     {
-        // if(Input.GetKeyDown(KeyCode.L))
-        // {
-        //     OpenMenu("a", "a", null);
-        // }
+        SelectedShipUI.SetText(UlockShipdex[ShipSelector]);
     }
 
     public void OpenMenu(string NameOfPlanet, string StatusOfPlanet, string Level)
@@ -45,6 +55,29 @@ public class levelSelectMenu : MonoBehaviour
     
     public void StartLevel()
     {
+        CurShip.Ship = UlockShipdex[ShipSelector];
         SceneManager.LoadScene(sceneName:SelectedLevel);
+    }
+    public void NextShip()
+    {
+        if(ShipSelector < UlockShipdex.Length-1)
+        {
+            ShipSelector++;
+        }
+        else
+        {
+            ShipSelector = 0;
+        }
+    }
+    public void PrevShip()
+    {
+        if(ShipSelector > 0)
+        {
+            ShipSelector--;
+        }
+        else
+        {
+            ShipSelector = UlockShipdex.Length-1;
+        }
     }
 }

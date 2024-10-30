@@ -10,7 +10,7 @@ public class deathScreen : MonoBehaviour
 
     void Start()
     {
-        
+        DeathScreenIsActive = false;
     }
 
     public void Activate()
@@ -26,6 +26,7 @@ public class deathScreen : MonoBehaviour
     }
     public void GoToLevelSelect()
     {
+        DeathScreenIsActive = false;
         SceneManager.LoadScene(sceneName:"LevelSelect");
     }
 }
