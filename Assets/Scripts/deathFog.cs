@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class deathFog : MonoBehaviour
 {
+    public GameObject fogject;
     public Image fog;
     public TextMeshProUGUI fogText;
     public float levelSize;
@@ -16,6 +17,7 @@ public class deathFog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fogject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("PlayerShip"); //find player
         StartCoroutine(fogDamageCoroutine());
 
@@ -27,12 +29,14 @@ public class deathFog : MonoBehaviour
         distanceToCenter = Vector3.Distance(player.transform.position, new Vector3(0,0,0)); 
         if(distanceToCenter > levelSize) //if the player is out of bounds
         {
+            fogject.SetActive(true);
             float alphaMod = (distanceToCenter - levelSize)/10; 
             fog.color = new Color(0,0,0,alphaMod);
             fogText.color = new Color(255,255,255,alphaMod);
         }
         else //if the player isnt out of bounds
         {
+            fogject.SetActive(false);
             fog.color = new Color(0,0,0,0);
             fogText.color = new Color(255,255,255,0);
 
