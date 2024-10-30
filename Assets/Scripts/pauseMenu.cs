@@ -15,7 +15,7 @@ public class pauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if(deathScreen.DeathScreenIsActive)
+        if(deathScreen.DeathScreenIsActive) //if the deathscreen isnt active allow pause menu to work
         {
         }
         else

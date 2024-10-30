@@ -9,6 +9,7 @@ TagManager:
   - BulletE
   - PlayerShip
   - Planet
+  - StaticHurter
   layers:
   - Default
   - TransparentFX

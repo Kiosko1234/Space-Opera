@@ -16,7 +16,7 @@ public class deathFog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("PlayerShip");
+        player = GameObject.FindGameObjectWithTag("PlayerShip"); //find player
         StartCoroutine(fogDamageCoroutine());
 
     }
@@ -24,25 +24,25 @@ public class deathFog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceToCenter = Vector3.Distance(player.transform.position, new Vector3(0,0,0));
-        if(distanceToCenter > levelSize)
+        distanceToCenter = Vector3.Distance(player.transform.position, new Vector3(0,0,0)); 
+        if(distanceToCenter > levelSize) //if the player is out of bounds
         {
             float alphaMod = (distanceToCenter - levelSize)/10; 
             fog.color = new Color(0,0,0,alphaMod);
             fogText.color = new Color(255,255,255,alphaMod);
         }
-        else
+        else //if the player isnt out of bounds
         {
             fog.color = new Color(0,0,0,0);
             fogText.color = new Color(255,255,255,0);
 
         }
     }
-    IEnumerator fogDamageCoroutine()
+    IEnumerator fogDamageCoroutine() //damage every second if you are out of bounds
     {
         while(true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1); //do not move this into the if, it will break unity
             if(distanceToCenter > levelSize+5)
             {
                 characterController playerScrpt = player.GetComponent<characterController>();

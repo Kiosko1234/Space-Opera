@@ -13,7 +13,7 @@ public class deathScreen : MonoBehaviour
         DeathScreenIsActive = false;
     }
 
-    public void Activate()
+    public void Activate() //activate the death screen
     {
         DeathScreenIsActive = true;
         DeathScreenUI.SetActive(true);

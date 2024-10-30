@@ -24,7 +24,7 @@ public class levelSelectMenu : MonoBehaviour
 
     
     void Start()
-    {
+    { //loading the selection of ships, needs to be made automatic through files later
         UlockShipdex[0] = "Scrap";
         UlockShipdex[1] = "Medium";
         UlockShipdex[2] = "Small";    

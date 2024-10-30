@@ -13,7 +13,7 @@ public class basicShooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && fireTimer <= 0f)
+        if (Input.GetKey(KeyCode.Mouse0) && fireTimer <= 0f) //if timer is up, you can shoot if button pressed
         {
             Shoot(bulletsPerShot);
             fireTimer = fireRate;
@@ -26,7 +26,7 @@ public class basicShooting : MonoBehaviour
     
     void Shoot(int count)
     {
-       for (int k=0; k < count; k++)
+       for (int k=0; k < count; k++) //shoot the number of bullets that is set
         {
             GameObject bullet = Instantiate(bulletPrefab, cannonChambers[k].position, cannonChambers[k].rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

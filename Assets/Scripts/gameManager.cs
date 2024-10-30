@@ -9,7 +9,7 @@ public class gameManager : MonoBehaviour
     public GameObject[] ShipPrefabs;
     
     void Awake()
-    {
+    { //spawn the ship the player has selected
         if(CurShip.Ship == "Scrap")
         {
             Instantiate(ShipPrefabs[0], new Vector3(0,0,0), new Quaternion(0,0,0,0));
@@ -29,7 +29,7 @@ public class gameManager : MonoBehaviour
 
     }
     void Start()
-    {
+    { 
         Time.timeScale = 1f;        
     }
 

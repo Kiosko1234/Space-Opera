@@ -68,6 +68,10 @@ public class characterController : MonoBehaviour
 
             HP -= bulletDamage.damage;
         }
+        if(collision.tag == "StaticHurter")
+        {
+            HP -= 5;
+        }
     }
 
     void Die()
