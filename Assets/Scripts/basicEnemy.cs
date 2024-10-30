@@ -84,6 +84,7 @@ public class basicEnemy : MonoBehaviour
 
     void Die()
     {
+        levelManager.Complesion++;
         Destroy(this.gameObject);
     }
 
