@@ -12,7 +12,7 @@ public class deathFog : MonoBehaviour
     public float levelSize;
     GameObject player;
     float distanceToCenter;
-    int damageOvertime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class deathFog : MonoBehaviour
     void Update()
     {
         distanceToCenter = Vector3.Distance(player.transform.position, new Vector3(0,0,0)); 
-        if(distanceToCenter > levelSize) //if the player is out of bounds
+        if(distanceToCenter > levelSize && !pauseMenu.GameIsPaused && !deathScreen.DeathScreenIsActive && !winScreen.WinScreenIsActive) //if the player is out of bounds
         {
             fogject.SetActive(true);
             float alphaMod = (distanceToCenter - levelSize)/10; 
@@ -51,6 +51,10 @@ public class deathFog : MonoBehaviour
             {
                 characterController playerScrpt = player.GetComponent<characterController>();
                 playerScrpt.HP--;
+                // if(playerScrpt.HP <= 0)
+                // {
+                //     fogject.SetActive(false);
+                // }
             }
         }
     }

@@ -194,10 +194,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   rb: {fileID: 2041138769586301207}
+  spriteRenderer: {fileID: 4073940843979776052}
   cam: {fileID: 0}
   accel: 6
   decel: 5
   velocity: 0
+  freeze: 0
   HP: 150
 --- !u!114 &7705257959212531601
 MonoBehaviour:
