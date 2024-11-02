@@ -79,7 +79,7 @@ public class meleeEnemyMovement : MonoBehaviour
 
     void Die()
     {
-        levelManager.Complesion++;
+        levelManager.completion++;
         Destroy(this.gameObject);
     }
 

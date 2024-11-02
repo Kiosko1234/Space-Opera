@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2817483105622185085}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0.367, z: 0.042774312}
+  m_LocalPosition: {x: 0.648, y: 0.383, z: 0.042774312}
   m_LocalScale: {x: 1.2551618, y: 1.8256899, z: 1.2551618}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3993553632881333735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: -0.111, z: 0}
+  m_LocalPosition: {x: -0.007, y: -1.031, z: 0}
   m_LocalScale: {x: 0.22218002, y: 0.22218, z: 0.06388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1339,17 +1339,17 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.07898478, b: 0, a: 1}
-        key1: {r: 1, g: 0.7759586, b: 0, a: 0}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0, g: 1, b: 0.95438194, a: 1}
+        key1: {r: 1, g: 0.07898478, b: 0, a: 0}
+        key2: {r: 1, g: 0.7759586, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 29491
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -1365,7 +1365,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -4876,7 +4876,7 @@ GameObject:
   - component: {fileID: 2579770944752679568}
   - component: {fileID: 7371790607072550254}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: IceEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,8 +4892,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.15, y: 0.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1199915017495180089}
   - {fileID: 9214576832421988337}
@@ -4940,7 +4940,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e16c26a637f2b14bbbea6fe578da4a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d275f89e9e36ce41b84b4bbad74e781, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4993,9 +4993,9 @@ MonoBehaviour:
   rb: {fileID: 771501566673694744}
   playerRb: {fileID: 0}
   distanceToRPlyrPos: 0
-  maxSpeed: 2
-  accel: 1
-  decel: 1
+  maxSpeed: 5
+  accel: 3
+  decel: 4
   vel: 0
   hp: 3
   movementStyle: 0
@@ -5036,7 +5036,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4807956, y: 1.754}
+    oldSize: {x: 4.9615912, y: 3.508}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5044,9 +5044,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0.5225115, y: 0.31220376}
+      - {x: -0.03207946, y: 0.6939666}
+      - {x: -0.4922011, y: 0.3742208}
+      - {x: 0.008683205, y: -1.1309237}
   m_UseDelaunayMesh: 0
 --- !u!114 &7371790607072550254
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,29 +28,35 @@ public class characterController : MonoBehaviour
         //gets mouse position on screen
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        rb.position += direction * velocity * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Space) && (rb.position.y <= mousePos.y-1 || rb.position.y >= mousePos.y+1 || rb.position.x <= mousePos.x-1 || rb.position.x >= mousePos.x+1)) //move forwards when space pressed
         {        
             direction = (mousePos - rb.position).normalized; //gets the angle towards the mouse 
 
             if (velocity <= maxSpeed)
-                velocity += accel* Time.deltaTime;
-            else
-                velocity = maxSpeed;
+            {
+                velocity = Mathf.MoveTowards(velocity, maxSpeed, accel*Time.deltaTime);
+            }
+
         }
         else{
-            if (velocity >= 0)
+            if (velocity > 0)
             {
-                velocity -= decel* Time.deltaTime;
-                if (velocity <= 0)
-                    velocity = 0;
+                velocity = Mathf.MoveTowards(velocity, 0, decel*Time.deltaTime);
+
             }
         }
         if(HP<=0)
         {
             Die();
         }    
+    }
+    void MoveCharacter(Vector3 direction3)
+    {
+        if (velocity >= 0)
+        {
+            rb.MovePosition(transform.position + direction3 * velocity * Time.deltaTime);
+        }
     }
 
     //this thing does the turning to mouse
@@ -58,6 +65,7 @@ public class characterController : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle; 
+        MoveCharacter(direction);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 

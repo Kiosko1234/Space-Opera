@@ -5,30 +5,30 @@ using UnityEngine;
 
 public class levelManager : MonoBehaviour
 {
-    public int Progression = 0;
-    public static int Complesion = 0;
-    private int CompletionTarget;
-    public GameObject[] EnemyBank;
-    public Transform[] SpawnPos;
-    public float Delay;
-    public int SpawnRate;
-    public int InitialSpawn;
-    public winScreen WinUI;
+    public int progression = 0;
+    public static int completion = 0;
+    private int completionTarget;
+    public GameObject[] enemyBank;
+    public Transform[] spawnPos;
+    public float delay;
+    public int spawnRate;
+    public int initialSpawn;
+    public winScreen winUI;
     
     void Update() 
     {
-        if (Complesion >= CompletionTarget)
+        if (completion >= completionTarget)
         {
             Win();
         }
     }
     void Start()
     {
-        CompletionTarget = EnemyBank.Length;
-        Progression = 0;
-        Complesion = 0;
+        completionTarget = enemyBank.Length;
+        progression = 0;
+        completion = 0;
 
-        Spawn(InitialSpawn);
+        Spawn(initialSpawn);
         
         StartCoroutine(spawnTimerCoroutine());
     }
@@ -36,8 +36,8 @@ public class levelManager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(Delay);
-            Spawn(SpawnRate);
+            yield return new WaitForSeconds(delay);
+            Spawn(spawnRate);
         }
     }
 
@@ -46,15 +46,15 @@ public class levelManager : MonoBehaviour
     {
         for (int k=0;  k < Count; k++)
         {
-            if(Progression < CompletionTarget)
+            if(progression < completionTarget)
             {
-                Instantiate(EnemyBank[Progression], SpawnPos[Random.Range(0,SpawnPos.Length)].position+new Vector3(Random.Range(-2f,2f),Random.Range(-2f,2f),0), new Quaternion(0,0,0,0));
-                Progression++;
+                Instantiate(enemyBank[progression], spawnPos[Random.Range(0,spawnPos.Length)].position+new Vector3(Random.Range(-2f,2f),Random.Range(-2f,2f),0), new Quaternion(0,0,0,0));
+                progression++;
             }
         }
     }
     void Win()
     {
-        WinUI.Activate();
+        winUI.Activate();
     }
 }
