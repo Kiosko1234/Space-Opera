@@ -7,13 +7,16 @@ using UnityEngine.AI;
 public class characterController : MonoBehaviour
 {
     public float maxSpeed;
+    float trueMaxSpeed;
     public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
     public Camera cam;
     Vector2 mousePos;
     public float accel;
     public float decel;
     public float velocity;
     Vector2 direction;
+    public float freeze;
 
     public int HP;
 
@@ -21,13 +24,16 @@ public class characterController : MonoBehaviour
     {
         GameObject Camera = GameObject.FindGameObjectWithTag("MainCamera");
         cam = Camera.GetComponent<Camera>();
+        trueMaxSpeed = maxSpeed;
     }
 
     void Update()
     {
         //gets mouse position on screen
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
+        maxSpeed = trueMaxSpeed - (trueMaxSpeed*(freeze/20));
+        Color blueTint = new Color(255 - (255*(freeze/20)),255,255,255);
+        spriteRenderer.color = blueTint;
 
         if (Input.GetKey(KeyCode.Space) && (rb.position.y <= mousePos.y-1 || rb.position.y >= mousePos.y+1 || rb.position.x <= mousePos.x-1 || rb.position.x >= mousePos.x+1)) //move forwards when space pressed
         {        
@@ -72,9 +78,14 @@ public class characterController : MonoBehaviour
     {
         if (collision.tag == "BulletE")
         {
-            bulletEnemyBasic bulletDamage = collision.GetComponent<bulletEnemyBasic>();
-
-            HP -= bulletDamage.damage;
+            bulletEnemyBasic bulletInfo = collision.GetComponent<bulletEnemyBasic>();
+            
+            HP -= bulletInfo.damage;
+            if(freeze < 10 && bulletInfo.freezeEff != 0)
+            {
+                freeze += bulletInfo.freezeEff;
+                StartCoroutine(FreezeTimer());
+            }
         }
         if(collision.tag == "StaticHurter")
         {
@@ -82,6 +93,11 @@ public class characterController : MonoBehaviour
         }
     }
 
+    IEnumerator FreezeTimer()
+    {
+        yield return new WaitForSeconds(freeze);
+        freeze -= 1;
+    }
     void Die()
     {
         Debug.Log("you died lmao");
