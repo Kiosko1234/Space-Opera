@@ -6,7 +6,6 @@ using UnityEngine;
 public class bulletEnemyBasic : MonoBehaviour
 {
     public int damage;
-    public int freezeEff;
     void Start()
     {
         Destroy(this.gameObject, 1f);
@@ -16,8 +15,8 @@ public class bulletEnemyBasic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)  
     {
         if(collision.tag == "PlayerShip")
-        {
+            {
             Destroy(this.gameObject);
-        }
+            }
     }
 }

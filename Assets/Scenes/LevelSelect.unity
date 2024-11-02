@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlanetName: Test
-  Status: Occupied
+  Liberated: 0
   Level: Level1
   LevelSelectMenuScript: {fileID: 1507032484}
 --- !u!1 &802345041
@@ -1175,6 +1175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b6f6bf9424f0c40990cc50c16ebf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scapShipUnlocked: 1
+  mediumShipUnlocked: 0
+  smallShipUnlocked: 0
+  bigShipUnlocked: 0
+  planets: {fileID: 0}
 --- !u!1 &967970342
 GameObject:
   m_ObjectHideFlags: 0
