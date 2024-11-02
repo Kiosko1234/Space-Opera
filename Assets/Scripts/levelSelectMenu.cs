@@ -36,13 +36,13 @@ public class levelSelectMenu : MonoBehaviour
         SelectedShipUI.SetText(UlockShipdex[ShipSelector]);
     }
 
-    public void OpenMenu(string NameOfPlanet, bool StatusOfPlanet, string Level)
+    public void OpenMenu(string NameOfPlanet, string StatusOfPlanet, string Level)
     {
         LevelSelectionUI.SetActive(true);
         Time.timeScale = 0f;
         MenuOpened = true;
         PlanetNameUItext.SetText(NameOfPlanet);
-        StatusUItext.SetText("Liberated: " + StatusOfPlanet);
+        StatusUItext.SetText("Status: " + StatusOfPlanet);
         SelectedLevel = Level;
         
     }

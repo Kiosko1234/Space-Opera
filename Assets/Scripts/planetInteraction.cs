@@ -6,7 +6,7 @@ using UnityEngine;
 public class planetInteraction : MonoBehaviour
 {
     public string PlanetName;
-    public bool Liberated;
+    public string Status;
     public string Level;
     public levelSelectMenu LevelSelectMenuScript;
 
@@ -20,23 +20,8 @@ public class planetInteraction : MonoBehaviour
     {
         if(collision.tag == "BulletP")
         {
-            LevelSelectMenuScript.OpenMenu(PlanetName, Liberated, Level);
+            LevelSelectMenuScript.OpenMenu(PlanetName, Status, Level);
         }
     }
 
-    public void Save(ref PlanetSaveData data)
-    {
-        data.isLiberated = Liberated;
-    }
-
-    public void Load(PlanetSaveData data)
-    {
-        Liberated = data.isLiberated;
-    }
-}
-
-[System.Serializable]
-public struct PlanetSaveData
-{
-    public bool isLiberated;
 }
