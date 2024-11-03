@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class levelManager : MonoBehaviour
 {
+    public int levelNumber;
     public int progression = 0;
     public static int completion = 0;
     private int completionTarget;
@@ -14,6 +15,7 @@ public class levelManager : MonoBehaviour
     public int spawnRate;
     public int initialSpawn;
     public winScreen winUI;
+    public progressionController progressionController;
     
     void Update() 
     {
@@ -55,6 +57,7 @@ public class levelManager : MonoBehaviour
     }
     void Win()
     {
+        progressionController.Progress();
         winUI.Activate();
     }
 }

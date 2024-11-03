@@ -5,22 +5,30 @@ using UnityEngine;
 
 public class planetInteraction : MonoBehaviour
 {
-    public string PlanetName;
-    public string Status;
-    public string Level;
-    public levelSelectMenu LevelSelectMenuScript;
+    public string planetName;
+    public string status;
+    public string level;
+    public int levelNumber;
+    public levelSelectMenu levelSelectMenuScript;
+    public MoonInfoSO moonInfo;
 
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        if(moonInfo.MoonFreed[levelNumber] == true)
+        {
+            status = "Liberated";
+        }
+        else
+        {
+            status = "Occupied";
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if(collision.tag == "BulletP")
         {
-            LevelSelectMenuScript.OpenMenu(PlanetName, Status, Level);
+            levelSelectMenuScript.OpenMenu(planetName, status, level);
         }
     }
 
