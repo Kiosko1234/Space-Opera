@@ -18,7 +18,7 @@ public class healthIndicatorScrypt : MonoBehaviour
 
     void Update()
     {
-        TextUI.SetText(PlyrScript.HP.ToString());
+        TextUI.SetText("HP: " + PlyrScript.HP.ToString());
         if(PlyrScript.HP <= 0)
         {
             DScreen.Activate();
