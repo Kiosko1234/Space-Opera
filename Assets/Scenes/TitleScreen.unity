@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 127285059}
   - component: {fileID: 127285058}
   - component: {fileID: 127285057}
+  - component: {fileID: 127285061}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -393,6 +394,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &127285061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127285056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f35c517ce7c5640a73ed019fee114f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
 --- !u!1 &175277210
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,9 +777,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 127285061}
+        m_TargetAssemblyTypeName: menuScreen, Assembly-CSharp
+        m_MethodName: StartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1048,9 +1062,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 127285061}
+        m_TargetAssemblyTypeName: menuScreen, Assembly-CSharp
+        m_MethodName: QuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1456,7 +1470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '|   Start'
+  m_text: '|  Start'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
