@@ -19,7 +19,6 @@ public class levelManager : MonoBehaviour
     
     void Update() 
     {
-        Debug.Log(completion);
         if (completion >= completionTarget)
         {
             Win();

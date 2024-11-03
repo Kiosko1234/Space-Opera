@@ -863,6 +863,7 @@ GameObject:
   - component: {fileID: 2022275515}
   - component: {fileID: 2022275516}
   - component: {fileID: 2022275517}
+  - component: {fileID: 2022275518}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -988,6 +989,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipInfo: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
+  levelManager: {fileID: 2022275516}
+--- !u!114 &2022275518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022275513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4536b0a732b922b4a87dbdc60784ec17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   levelManager: {fileID: 2022275516}
 --- !u!1 &2022582438
 GameObject:
