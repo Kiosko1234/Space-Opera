@@ -728,35 +728,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c60240f7a602c4843929d712362c56e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Progression: 0
-  EnemyBank:
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  - {fileID: 5687176275386550050, guid: 7f8cc51f05e10b849a1b679ce4509185, type: 3}
-  SpawnPos:
-  - {fileID: 2050528556}
-  - {fileID: 38980882}
-  Delay: 1
-  SpawnRate: 2
-  InitialSpawn: 3
-  WinUI: {fileID: 6841243280789160260}
+  levelNumber: 0
+  progression: 0
+  enemyBank: []
+  spawnPos: []
+  delay: 0
+  spawnRate: 0
+  initialSpawn: 0
+  winUI: {fileID: 0}
+  progressionController: {fileID: 0}
 --- !u!1 &2022582438
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,17 +836,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2022275514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6841243280789160260 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6841243279455785956, guid: 886d36b52b50d284c95b1e4d16c364d0, type: 3}
-  m_PrefabInstance: {fileID: 1351275168}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9cb864140cfd5c44ac94d6b4af429b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
