@@ -23,7 +23,7 @@ public class unlockSystem : MonoBehaviour
             image.texture = imageIndex[0];
             text.SetText(nameIndex[0] + " Unlocked");
         }
-        if(shipSO.ShipProgression == 3)
+        else if(shipSO.ShipProgression == 3)
         {
             UIthing.SetActive(true);
             image.texture = imageIndex[1];
