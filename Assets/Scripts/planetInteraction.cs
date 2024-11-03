@@ -11,12 +11,20 @@ public class planetInteraction : MonoBehaviour
     public int levelNumber;
     public levelSelectMenu levelSelectMenuScript;
     public MoonInfoSO moonInfo;
+    public ShipSO shipSO;
+    public string planetInfo;
+    public int progressRequirement;
+
 
     void Start()
     {
         if(moonInfo.MoonFreed[levelNumber] == true)
         {
             status = "Liberated";
+        }
+        else if(progressRequirement <= shipSO.GameProgression)
+        {
+            status = "Locked";
         }
         else
         {
@@ -28,7 +36,7 @@ public class planetInteraction : MonoBehaviour
     {
         if(collision.tag == "BulletP")
         {
-            levelSelectMenuScript.OpenMenu(planetName, status, level);
+            levelSelectMenuScript.OpenMenu(planetName, status, level, planetInfo);
         }
     }
 

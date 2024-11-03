@@ -17,6 +17,7 @@ public class levelSelectMenu : MonoBehaviour
     public TextMeshProUGUI PlanetNameUItext;
     public TextMeshProUGUI StatusUItext;
     public TextMeshProUGUI SelectedShipUI;
+    public TextMeshProUGUI flavourText;
 
     public string SelectedLevel;
     public string[] UlockShipdex;
@@ -41,11 +42,11 @@ public class levelSelectMenu : MonoBehaviour
         }
         if(CurShip.ShipProgression >= 2)
         {
-            UlockShipdex[1] = "Small";
+            UlockShipdex[2] = "Small";
         }
         if(CurShip.ShipProgression >= 3)
         {
-            UlockShipdex[1] = "Big";
+            UlockShipdex[3] = "Big";
         }
 
         MenuOpened = false;  
@@ -72,7 +73,7 @@ public class levelSelectMenu : MonoBehaviour
         }
     }
 
-    public void OpenMenu(string NameOfPlanet, string StatusOfPlanet, string Level)
+    public void OpenMenu(string NameOfPlanet, string StatusOfPlanet, string Level, string planetInfo)
     {
         LevelSelectionUI.SetActive(true);
         Time.timeScale = 0f;
@@ -80,6 +81,7 @@ public class levelSelectMenu : MonoBehaviour
         PlanetNameUItext.SetText(NameOfPlanet);
         StatusUItext.SetText("Status: " + StatusOfPlanet);
         SelectedLevel = Level;
+        flavourText.SetText(planetInfo);
         
     }
     public void CloseMenu()
@@ -91,8 +93,12 @@ public class levelSelectMenu : MonoBehaviour
     
     public void StartLevel()
     {
-        CurShip.Ship = UlockShipdex[ShipSelector];
-        SceneManager.LoadScene(sceneName:SelectedLevel);
+        if(StatusUItext.text != "Locked")
+        {
+            CurShip.Ship = UlockShipdex[ShipSelector];
+            SceneManager.LoadScene(sceneName:SelectedLevel);
+
+        }
     }
     public void NextShip()
     {

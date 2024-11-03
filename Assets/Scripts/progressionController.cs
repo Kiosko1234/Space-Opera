@@ -15,7 +15,7 @@ public class progressionController : MonoBehaviour
         {
             moonInfo.MoonFreed[levelManager.levelNumber] = true;
             shipInfo.GameProgression++;
-            if(shipInfo.GameProgression == 1 || shipInfo.GameProgression == 3 || shipInfo.GameProgression == 5)
+            if(shipInfo.GameProgression == 1 || shipInfo.GameProgression == 2 || shipInfo.GameProgression == 3)
             {
                 shipInfo.ShipProgression++;
             }
