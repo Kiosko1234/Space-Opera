@@ -795,11 +795,16 @@ MonoBehaviour:
   - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
   - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
   - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
+  - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
+  - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
+  - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
+  - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
+  - {fileID: 5687176275386550050, guid: 1e326583df67aba4aaac45167a10025e, type: 3}
   spawnPos:
   - {fileID: 2050528556}
   - {fileID: 38980882}
   - {fileID: 777741414}
-  delay: 7
+  delay: 4
   spawnRate: 2
   initialSpawn: 3
   winUI: {fileID: 1351275169}

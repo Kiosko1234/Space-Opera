@@ -832,7 +832,7 @@ MonoBehaviour:
   - {fileID: 38980882}
   - {fileID: 777741414}
   - {fileID: 1760418801}
-  delay: 7
+  delay: 4
   spawnRate: 2
   initialSpawn: 3
   winUI: {fileID: 1351275169}
