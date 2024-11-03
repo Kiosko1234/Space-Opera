@@ -22,7 +22,7 @@ public class planetInteraction : MonoBehaviour
         {
             status = "Liberated";
         }
-        else if(progressRequirement <= shipSO.GameProgression)
+        else if(progressRequirement >= shipSO.GameProgression)
         {
             status = "Locked";
         }

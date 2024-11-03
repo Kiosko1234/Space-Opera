@@ -93,7 +93,7 @@ public class levelSelectMenu : MonoBehaviour
     
     public void StartLevel()
     {
-        if(StatusUItext.text != "Locked")
+        if(StatusUItext.text != "Status: Locked")
         {
             CurShip.Ship = UlockShipdex[ShipSelector];
             SceneManager.LoadScene(sceneName:SelectedLevel);
