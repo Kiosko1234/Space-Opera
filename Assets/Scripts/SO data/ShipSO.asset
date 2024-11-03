@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: ShipSO
   m_EditorClassIdentifier: 
   _ship: Scrap
+  _shipProgression: 0
+  _gameProgression: 0

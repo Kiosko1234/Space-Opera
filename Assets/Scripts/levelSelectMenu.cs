@@ -30,10 +30,24 @@ public class levelSelectMenu : MonoBehaviour
     
     void Start()
     { //loading the selection of ships, needs to be made automatic through files later
-        UlockShipdex[0] = "Scrap";
-        UlockShipdex[1] = "Medium";
-        UlockShipdex[2] = "Small";    
-        UlockShipdex[3] = "Big";  
+        UlockShipdex = new string[CurShip.ShipProgression+1];
+        if(CurShip.ShipProgression >= 0)
+        {
+            UlockShipdex[0] = "Scrap";
+        }
+        if(CurShip.ShipProgression >= 1)
+        {
+            UlockShipdex[1] = "Medium";
+        }
+        if(CurShip.ShipProgression >= 2)
+        {
+            UlockShipdex[1] = "Small";
+        }
+        if(CurShip.ShipProgression >= 3)
+        {
+            UlockShipdex[1] = "Big";
+        }
+
         MenuOpened = false;  
     }
     void Update()

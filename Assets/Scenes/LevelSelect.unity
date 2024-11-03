@@ -2572,11 +2572,7 @@ MonoBehaviour:
   StatusUItext: {fileID: 1280728036}
   SelectedShipUI: {fileID: 2101656391}
   SelectedLevel: 
-  UlockShipdex:
-  - 
-  - 
-  - 
-  - 
+  UlockShipdex: []
   ShipSelectorImage: {fileID: 967970344}
   ShipImages:
   - {fileID: 2800000, guid: 942d89453a06ded409ab7a47a0aa5236, type: 3}
