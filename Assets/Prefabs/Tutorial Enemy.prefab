@@ -4876,7 +4876,7 @@ GameObject:
   - component: {fileID: 2579770944752679568}
   - component: {fileID: 7371790607072550254}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Tutorial Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4999,7 +4999,7 @@ MonoBehaviour:
   vel: 0
   hp: 3
   movementStyle: 0
-  visionDistance: 20
+  visionDistance: 5
 --- !u!60 &2579770944752679568
 PolygonCollider2D:
   m_ObjectHideFlags: 0
