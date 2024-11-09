@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,8 +14,24 @@ public class cutsceneManager : MonoBehaviour
     public RawImage headShot;
     public Texture2D interComs;
     public Texture2D chep;
-    public string[] dialogue;
+    public string[] Olddialogue;
+    public DialogueUnit[] dialogue;
     public int counter = -1;
+
+    [System.Serializable]
+    public struct DialogueUnit
+    {
+        public string text;
+        public string character;
+        public string emotion;
+
+        public DialogueUnit(string _text, string _character, string _emotion)
+        {
+            this.text = _text;
+            this.character = _character;
+            this.emotion = _emotion;
+        }
+    }
 
     void Start()
     {
@@ -26,7 +43,7 @@ public class cutsceneManager : MonoBehaviour
     {
         if(counter > -1 && counter < dialogue.Length)
         {
-            textBox.SetText(dialogue[counter]);
+            textBox.SetText(dialogue[counter].text);
         }
         if(Input.anyKeyDown == true) 
         {
