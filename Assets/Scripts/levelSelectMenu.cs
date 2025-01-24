@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
+using TMPro;
 
 public class levelSelectMenu : MonoBehaviour
 {
@@ -15,28 +16,63 @@ public class levelSelectMenu : MonoBehaviour
     public TextMeshProUGUI PlanetNameUItext;
     public TextMeshProUGUI StatusUItext;
     public TextMeshProUGUI SelectedShipUI;
+    public TextMeshProUGUI flavourText;
 
     public string SelectedLevel;
     public string[] UlockShipdex;
     private int ShipSelector = 0;
+    public RawImage ShipSelectorImage;
+    public Texture2D[] ShipImages;
+
     [SerializeField]
     private ShipSO CurShip;
 
     
     void Start()
     { //loading the selection of ships, needs to be made automatic through files later
-        UlockShipdex[0] = "Scrap";
-        UlockShipdex[1] = "Medium";
-        UlockShipdex[2] = "Small";    
-        UlockShipdex[3] = "Big";  
+        UlockShipdex = new string[CurShip.ShipProgression+1];
+        if(CurShip.ShipProgression >= 0)
+        {
+            UlockShipdex[0] = "Scrap";
+        }
+        if(CurShip.ShipProgression >= 1)
+        {
+            UlockShipdex[1] = "Medium";
+        }
+        if(CurShip.ShipProgression >= 2)
+        {
+            UlockShipdex[2] = "Small";
+        }
+        if(CurShip.ShipProgression >= 3)
+        {
+            UlockShipdex[3] = "Big";
+        }
+
         MenuOpened = false;  
     }
     void Update()
     {
         SelectedShipUI.SetText(UlockShipdex[ShipSelector]);
+        //please make this better in the future, i just dont have time rn
+        if(UlockShipdex[ShipSelector] == "Scrap")
+        {
+            ShipSelectorImage.texture = ShipImages[0];
+        }
+        if(UlockShipdex[ShipSelector] == "Medium")
+        {
+            ShipSelectorImage.texture = ShipImages[1];
+        }
+        if(UlockShipdex[ShipSelector] == "Small")
+        {
+            ShipSelectorImage.texture = ShipImages[2];
+        }
+        if(UlockShipdex[ShipSelector] == "Big")
+        {
+            ShipSelectorImage.texture = ShipImages[3];
+        }
     }
 
-    public void OpenMenu(string NameOfPlanet, string StatusOfPlanet, string Level)
+    public void OpenMenu(string NameOfPlanet, string StatusOfPlanet, string Level, string planetInfo)
     {
         LevelSelectionUI.SetActive(true);
         Time.timeScale = 0f;
@@ -44,6 +80,7 @@ public class levelSelectMenu : MonoBehaviour
         PlanetNameUItext.SetText(NameOfPlanet);
         StatusUItext.SetText("Status: " + StatusOfPlanet);
         SelectedLevel = Level;
+        flavourText.SetText(planetInfo);
         
     }
     public void CloseMenu()
@@ -55,8 +92,12 @@ public class levelSelectMenu : MonoBehaviour
     
     public void StartLevel()
     {
-        CurShip.Ship = UlockShipdex[ShipSelector];
-        SceneManager.LoadScene(sceneName:SelectedLevel);
+        if(StatusUItext.text != "Status: Locked")
+        {
+            CurShip.Ship = UlockShipdex[ShipSelector];
+            SceneManager.LoadScene(sceneName:SelectedLevel);
+
+        }
     }
     public void NextShip()
     {

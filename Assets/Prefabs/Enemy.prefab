@@ -4993,13 +4993,13 @@ MonoBehaviour:
   rb: {fileID: 771501566673694744}
   playerRb: {fileID: 0}
   distanceToRPlyrPos: 0
-  maxSpeed: 5
-  accel: 3
-  decel: 4
+  maxSpeed: 2
+  accel: 1
+  decel: 1
   vel: 0
   hp: 3
   movementStyle: 0
-  visionDistance: 100
+  visionDistance: 20
 --- !u!60 &2579770944752679568
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5029,7 +5029,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

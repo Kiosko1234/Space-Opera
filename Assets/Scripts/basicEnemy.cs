@@ -25,56 +25,68 @@ public class basicEnemy : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("PlayerShip");
         playerRb = player.GetComponent<Rigidbody2D>();
     }
-    void  Update() {
-        distanceToRPlyrPos = Vector2.Distance(rb.position, playerRb.position);
-        if (vel <= 0)
+    void  Update() 
+    {
+        distanceToRPlyrPos = Vector2.Distance(rb.position, playerRb.position); //get distance between player and this enemy
+        if (vel <= 0) //if our speed is below zero, dont
         {
             vel = 0;
         }
-        if(movementStyle == 0)
+        if(movementStyle == 0) //position based movement style
         {
-            rb.position += lookDir * vel * Time.deltaTime;
         }
-        if(movementStyle == 1)
+        if(movementStyle == 1) //force based movement style
         {
             rb.AddForce(this.gameObject.transform.up * vel * Time.deltaTime);
         }
 
-        if (distanceToRPlyrPos <= visionDistance)
+        if (distanceToRPlyrPos <= visionDistance) // if player is in our FOV
         {
-            knownPlayerPos = playerRb.position;
-            if (vel <= maxSpeed && (distanceToRPlyrPos >= 5 || movementStyle == 1)) 
+            knownPlayerPos = playerRb.position; //set the player position into known player position
+            if (vel <= maxSpeed && (distanceToRPlyrPos >= 5 || movementStyle == 1))  //if our speed is below max and we arnt too close
             {
-                vel += accel*Time.deltaTime;
+                vel = Mathf.MoveTowards(vel, maxSpeed, accel*Time.deltaTime);
             }
-            if (distanceToRPlyrPos <= 5 && movementStyle != 1)
+            if (distanceToRPlyrPos <= 5 && movementStyle != 1) //if close enought, stop
             {
-                if(vel >= 0)
+                if(vel > 0)
                 {
-                    vel -= decel* Time.deltaTime;
+                    vel = Mathf.MoveTowards(vel, 0, decel*Time.deltaTime);
                 }
             }            
         }
-        else
+        else //if the player is out of our FOV, slow down
         {
-            if(vel >= 0)
+            if(vel > 0)
             {
-                vel -= decel*Time.deltaTime;
+                vel = Mathf.MoveTowards(vel, 0, decel*Time.deltaTime);
             }
         }
-        if (hp <= 0)
+        if (hp <= 0) //if dead, die
+        {
             Die();
-
+        }
     }
 
     void FixedUpdate() 
     {
-        lookDir = knownPlayerPos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle; 
+        lookDir = knownPlayerPos - rb.position; //get the direction the player is in
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f; //get the angle the player is in
+        rb.rotation = angle; //set this to look at the player
+        MoveCharacter(lookDir);        
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+    void MoveCharacter(Vector3 direction3)
+    {
+        if(vel >= 0)
+        {
+            rb.MovePosition(transform.position + direction3 * vel * Time.deltaTime);
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision) //if hit, act like it
     {
         bulletBasic bulletDamage = collision.GetComponent<bulletBasic>();
         if (collision.tag == "BulletP")
@@ -83,9 +95,9 @@ public class basicEnemy : MonoBehaviour
         }
     }
 
-    void Die()
+    void Die() //if dying, die for real
     {
-        levelManager.Complesion++;
+        levelManager.completion++;
         Destroy(this.gameObject);
     }
 

@@ -194,10 +194,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   rb: {fileID: 2041138769586301207}
+  spriteRenderer: {fileID: 4073940843979776052}
   cam: {fileID: 0}
   accel: 6
   decel: 5
   velocity: 0
+  freeze: 0
   HP: 150
 --- !u!114 &7705257959212531601
 MonoBehaviour:
@@ -247,7 +249,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.21}
