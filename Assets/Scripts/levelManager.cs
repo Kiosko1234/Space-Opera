@@ -58,6 +58,6 @@ public class levelManager : MonoBehaviour
     void Win()
     {
         progressionController.Progress();
-        winUI.Activate();
+        winUI.Activate(progressionController.showReward);
     }
 }

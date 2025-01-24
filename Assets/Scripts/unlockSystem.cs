@@ -31,7 +31,10 @@ public class unlockSystem : MonoBehaviour
         }
         else
         {
+            image.texture = null;
+            text.SetText("");
             UIthing.SetActive(false);
         }
+
     }
 }

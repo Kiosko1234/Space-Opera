@@ -10,6 +10,7 @@ TagManager:
   - PlayerShip
   - Planet
   - StaticHurter
+  - GottenRewardIndicator
   layers:
   - Default
   - TransparentFX

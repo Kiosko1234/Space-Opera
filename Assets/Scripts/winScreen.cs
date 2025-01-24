@@ -13,11 +13,16 @@ public class winScreen : MonoBehaviour
         WinScreenIsActive = false;
     }
 
-    public void Activate()
+    public void Activate(bool firstTime)
     {
         WinScreenIsActive = true;
         WinScreenUI.SetActive(true);
         Time.timeScale = 0f;
+        if(!firstTime)
+        {
+            GameObject reward = GameObject.FindGameObjectWithTag("GottenRewardIndicator");
+            reward.SetActive(false);
+        }
     }
     public void RestartLevel()
     {
