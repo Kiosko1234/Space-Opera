@@ -1,0 +1,9 @@
+Názov tímu: Kompetentný ludia
+Názov hry: Waste of Space
+Vývojoové prostredie a prostriedky: Unity, C#
+
+Obrázky:
+*Tlačítka
+Zdroj: Unity
+Autor: Unity
+Licencia: Unity license
