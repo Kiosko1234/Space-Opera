@@ -16,6 +16,7 @@ public class levelManager : MonoBehaviour
     public int initialSpawn;
     public winScreen winUI;
     public progressionController progressionController;
+    public GameObject minmapIconPrefab;
     
     void Update() 
     {
@@ -50,8 +51,12 @@ public class levelManager : MonoBehaviour
         {
             if(progression < completionTarget)
             {
-                Instantiate(enemyBank[progression], spawnPos[Random.Range(0,spawnPos.Length)].position+new Vector3(Random.Range(-2f,2f),Random.Range(-2f,2f),0), new Quaternion(0,0,0,0));
+                GameObject thisEnemy = Instantiate(enemyBank[progression], spawnPos[Random.Range(0,spawnPos.Length)].position+new Vector3(Random.Range(-2f,2f),Random.Range(-2f,2f),0), new Quaternion(0,0,0,0));
                 progression++;
+                GameObject MinmapIcon = Instantiate(minmapIconPrefab, new Vector3(0,0,0), new Quaternion(0,0,0,0));
+                MinmapIcon.transform.SetParent(thisEnemy.transform);
+                MinmapIcon.transform.localPosition = Vector3.zero;
+
             }
         }
     }
