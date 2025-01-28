@@ -1780,6 +1780,7 @@ MonoBehaviour:
   - {fileID: 5725096410631811731, guid: 36f404cbd5c9d404cac20bec3e8abd25, type: 3}
   - {fileID: 5725096410631811731, guid: 8300cea57a05b7c41a5220e9c6845fce, type: 3}
   - {fileID: 5725096410631811731, guid: 5e57575595456c14989246bb96542307, type: 3}
+  MinmapIconPrefab: {fileID: 1295013730}
 --- !u!114 &957577538
 MonoBehaviour:
   m_ObjectHideFlags: 0
