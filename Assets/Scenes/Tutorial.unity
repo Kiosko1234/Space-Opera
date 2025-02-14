@@ -1430,6 +1430,7 @@ MonoBehaviour:
   - {fileID: 5725096410631811731, guid: 36f404cbd5c9d404cac20bec3e8abd25, type: 3}
   - {fileID: 5725096410631811731, guid: 8300cea57a05b7c41a5220e9c6845fce, type: 3}
   - {fileID: 5725096410631811731, guid: 5e57575595456c14989246bb96542307, type: 3}
+  MinmapIconPrefab: {fileID: 1409022544548455404, guid: f1d2f16f494cf0a4dad333a60eafb013, type: 3}
 --- !u!114 &2022275516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,6 +1456,7 @@ MonoBehaviour:
   initialSpawn: 3
   winUI: {fileID: 2006253326}
   progressionController: {fileID: 2022275517}
+  minmapIconPrefab: {fileID: 1409022544548455404, guid: 3af8c849b2ee0014fb2a2c8e4ec02f11, type: 3}
 --- !u!114 &2022275517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,6 +1472,7 @@ MonoBehaviour:
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipInfo: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
   levelManager: {fileID: 2022275516}
+  showReward: 0
 --- !u!1 &2022582438
 GameObject:
   m_ObjectHideFlags: 0

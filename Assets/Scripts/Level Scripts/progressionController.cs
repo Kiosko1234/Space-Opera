@@ -12,12 +12,12 @@ public class progressionController : MonoBehaviour
 
     public void Progress()
     {
-        if(moonInfo.MoonFreed[levelManager.levelNumber] == false)
+        if(moonInfo.MoonFreed[levelManager.levelNumber] == false) //if this moon hasnt been beaten yet then give them the reward
         {
             showReward = true;
             moonInfo.MoonFreed[levelManager.levelNumber] = true;
             shipInfo.GameProgression++;
-            if(shipInfo.GameProgression == 1 || shipInfo.GameProgression == 2 || shipInfo.GameProgression == 3)
+            if(shipInfo.GameProgression == 1 || shipInfo.GameProgression == 2 || shipInfo.GameProgression == 3) //the reward, please rework later
             {
                 shipInfo.ShipProgression++;
             }
@@ -26,5 +26,9 @@ public class progressionController : MonoBehaviour
         {
             showReward = false;
         }
+    }
+
+    void Update() {
+        //this is just so it can be disabled in the inspector
     }
 }
