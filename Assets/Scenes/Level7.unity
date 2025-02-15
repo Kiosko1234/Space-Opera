@@ -270,6 +270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6612563808296131757, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
+      propertyPath: levelSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7699498813935481198, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9418580fcdbee5449b23caef347817e, type: 3}
   m_Name: MoonSO
   m_EditorClassIdentifier: 
-  _moonFreed: 000000000000
+  _moonFreed: 01000000000000000000000000000000
