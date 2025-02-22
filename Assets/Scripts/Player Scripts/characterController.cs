@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,6 +18,7 @@ public class characterController : MonoBehaviour
     public float velocity;
     Vector2 direction;
     public float freeze;
+    public GameObject fireParticlesPrefab;
 
     public int HP;
 
@@ -86,6 +88,17 @@ public class characterController : MonoBehaviour
                 freeze += bulletInfo.freezeEff;
                 StartCoroutine(FreezeTimer());
             }
+            if(bulletInfo.poison != 0)
+            {
+                //Debug.Log("it hath noticed it has poison");
+                StartCoroutine(PoisonTick(bulletInfo.poison));
+                GameObject fireParticles = Instantiate(fireParticlesPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
+                fireParticles.transform.SetParent(this.gameObject.transform);
+            }
+            else
+            {
+                //Debug.Log("was hit by a poisonless pleb");
+            }
         }
         if(collision.tag == "StaticHurter")
         {
@@ -97,6 +110,16 @@ public class characterController : MonoBehaviour
     {
         yield return new WaitForSeconds(freeze);
         freeze -= 1;
+    }
+    IEnumerator PoisonTick(int poisonDmg)
+    {
+        int poisonCounter = 0;
+        while(poisonCounter < 6)
+        {
+            HP -= poisonDmg;
+            yield return new WaitForSeconds(0.5f);
+            poisonCounter++;
+        }   
     }
     void Die()
     {

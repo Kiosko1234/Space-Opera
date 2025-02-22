@@ -7,6 +7,7 @@ public class bulletEnemyBasic : MonoBehaviour
 {
     public int damage;
     public int freezeEff;
+    public int poison;
     void Start()
     {
         Destroy(this.gameObject, 1f);
@@ -20,4 +21,6 @@ public class bulletEnemyBasic : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+
 }

@@ -200,6 +200,7 @@ MonoBehaviour:
   decel: 5
   velocity: 0
   freeze: 0
+  fireParticlesPrefab: {fileID: 2497540659277325978, guid: 7a83c96dce9eaaa419d7da6082539209, type: 3}
   HP: 150
 --- !u!114 &7705257959212531601
 MonoBehaviour:
