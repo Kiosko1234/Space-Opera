@@ -19,6 +19,7 @@ public class basicEnemy : MonoBehaviour
     public int hp;
     public int movementStyle; //the way the enemy moves, 0 = basic, 1 = floaty 
     public float visionDistance;
+    public int keepDistanceRange = 5; //the distance the ship will stop accel near player, so it doesnt crash
 
     void Start()
     {
@@ -43,11 +44,11 @@ public class basicEnemy : MonoBehaviour
         if (distanceToRPlyrPos <= visionDistance) // if player is in our FOV
         {
             knownPlayerPos = playerRb.position; //set the player position into known player position
-            if (vel <= maxSpeed && (distanceToRPlyrPos >= 5 || movementStyle == 1))  //if our speed is below max and we arnt too close
+            if (vel <= maxSpeed && (distanceToRPlyrPos >= keepDistanceRange || movementStyle == 1))  //if our speed is below max and we arnt too close
             {
                 vel = Mathf.MoveTowards(vel, maxSpeed, accel*Time.deltaTime);
             }
-            if (distanceToRPlyrPos <= 5 && movementStyle != 1) //if close enought, stop
+            if (distanceToRPlyrPos <= keepDistanceRange && movementStyle != 1) //if close enought, stop
             {
                 if(vel > 0)
                 {
