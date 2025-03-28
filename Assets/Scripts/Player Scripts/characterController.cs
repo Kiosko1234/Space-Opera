@@ -82,7 +82,7 @@ public class characterController : MonoBehaviour
         {
             bulletEnemyBasic bulletInfo = collision.GetComponent<bulletEnemyBasic>();
             
-            HP -= bulletInfo.damage;
+            Damage(bulletInfo.damage);
             if(freeze < 10 && bulletInfo.freezeEff != 0)
             {
                 freeze += bulletInfo.freezeEff;
@@ -102,7 +102,7 @@ public class characterController : MonoBehaviour
         }
         if(collision.tag == "StaticHurter")
         {
-            HP -= 5;
+            Damage(5);
         }
     }
 
@@ -116,10 +116,14 @@ public class characterController : MonoBehaviour
         int poisonCounter = 0;
         while(poisonCounter < 6)
         {
-            HP -= poisonDmg;
+            Damage(poisonDmg);
             yield return new WaitForSeconds(0.5f);
             poisonCounter++;
         }   
+    }
+    public void Damage(int incomingDamage)
+    {
+        HP -= incomingDamage;
     }
     void Die()
     {

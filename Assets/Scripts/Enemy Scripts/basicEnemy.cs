@@ -92,8 +92,12 @@ public class basicEnemy : MonoBehaviour
         bulletBasic bulletDamage = collision.GetComponent<bulletBasic>();
         if (collision.tag == "BulletP")
         {
-            hp -= bulletDamage.damage;
+            Damage(bulletDamage.damage);
         }
+    }
+    public void Damage(int incomingDamage)
+    {
+        hp -= incomingDamage;
     }
 
     void Die() //if dying, die for real

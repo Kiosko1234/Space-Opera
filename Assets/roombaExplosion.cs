@@ -12,6 +12,8 @@ public class roombaExplosion : MonoBehaviour
     basicEnemy movementScript;
     bool activeDetonation;
     public GameObject explosionParticlesPrefab;
+    public GameObject explosionHitbox;
+    bool exploded = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +37,16 @@ public class roombaExplosion : MonoBehaviour
             explosionCounter += Time.deltaTime * 1;
             thisSprite.color = new Color(1,math.sin(explosionCounter*6.3f),math.sin(explosionCounter*6.3f),1);
         }
-        if(explosionCounter >= explosionTimer)
+        if(explosionCounter >= explosionTimer && !exploded)
         {
+            explosionHitbox.SetActive(true);
             GameObject explosionParticles = Instantiate(explosionParticlesPrefab, this.gameObject.transform.position, new Quaternion(0,0,0,0));
-            explosionCounter = 0;
+            exploded = true;
+        }
+        if(explosionCounter >= explosionTimer + Time.deltaTime * 5)
+        {
+            Debug.Log("delete");
+            Destroy(this.gameObject);
         }
     }
 }
