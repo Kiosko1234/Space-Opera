@@ -4875,6 +4875,7 @@ GameObject:
   - component: {fileID: 2673181426155830541}
   - component: {fileID: 2579770944752679568}
   - component: {fileID: 7371790607072550254}
+  - component: {fileID: 8397685522235940197}
   m_Layer: 0
   m_Name: IceEnemy
   m_TagString: Enemy
@@ -4997,9 +4998,9 @@ MonoBehaviour:
   accel: 3
   decel: 4
   vel: 0
-  hp: 3
   movementStyle: 0
   visionDistance: 100
+  keepDistanceRange: 5
 --- !u!60 &2579770944752679568
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5067,3 +5068,19 @@ MonoBehaviour:
   bulletsPerShot: 1
   bulletSpeed: 1000
   fireRate: 0.7
+--- !u!114 &8397685522235940197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687176275386550050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9e5264d6309474b8d892e46fc28d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 3
+  isEnemy: 1
+  isPlayer: 0
+  isObject: 0

@@ -7,19 +7,19 @@ using UnityEngine;
 public class healthIndicatorScrypt : MonoBehaviour
 {
     public TextMeshProUGUI TextUI;
-    characterController PlyrScript;
+    healthManager PlyrHpScript;
     public deathScreen DScreen;
 
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("PlayerShip");
-        PlyrScript = player.GetComponent<characterController>();
+        PlyrHpScript = player.GetComponent<healthManager>();
     }
 
     void Update()
     {
-        TextUI.SetText("HP: " + PlyrScript.HP.ToString());
-        if(PlyrScript.HP <= 0)
+        TextUI.SetText("HP: " + PlyrHpScript.hp.ToString());
+        if(PlyrHpScript.hp <= 0)
         {
             DScreen.Activate();
         }

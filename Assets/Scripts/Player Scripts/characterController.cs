@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,13 +20,14 @@ public class characterController : MonoBehaviour
     Vector2 direction;
     public float freeze;
     public GameObject fireParticlesPrefab;
+    public healthManager healthScript;
 
-    public int HP;
 
     void Start()
     {
         GameObject Camera = GameObject.FindGameObjectWithTag("MainCamera");
         cam = Camera.GetComponent<Camera>();
+        healthScript = this.GetComponent<healthManager>();
         trueMaxSpeed = maxSpeed;
     }
 
@@ -54,10 +56,6 @@ public class characterController : MonoBehaviour
 
             }
         }
-        if(HP<=0)
-        {
-            Die();
-        }    
     }
     void MoveCharacter(Vector3 direction3)
     {
@@ -82,13 +80,12 @@ public class characterController : MonoBehaviour
         {
             bulletEnemyBasic bulletInfo = collision.GetComponent<bulletEnemyBasic>();
             
-            Damage(bulletInfo.damage);
             if(freeze < 10 && bulletInfo.freezeEff != 0)
             {
                 freeze += bulletInfo.freezeEff;
                 StartCoroutine(FreezeTimer());
             }
-            if(bulletInfo.poison != 0)
+            if(bulletInfo.poison != 0) //this checks if poison should be added, this entire thing probably can be moved into healthManager but im too lazy to do it rn so good luck later
             {
                 //Debug.Log("it hath noticed it has poison");
                 StartCoroutine(PoisonTick(bulletInfo.poison));
@@ -102,7 +99,7 @@ public class characterController : MonoBehaviour
         }
         if(collision.tag == "StaticHurter")
         {
-            Damage(5);
+            healthScript.Damage(5);
         }
     }
 
@@ -116,17 +113,9 @@ public class characterController : MonoBehaviour
         int poisonCounter = 0;
         while(poisonCounter < 6)
         {
-            Damage(poisonDmg);
+            healthScript.Damage(poisonDmg);
             yield return new WaitForSeconds(0.5f);
             poisonCounter++;
         }   
-    }
-    public void Damage(int incomingDamage)
-    {
-        HP -= incomingDamage;
-    }
-    void Die()
-    {
-        Debug.Log("you died lmao");
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class explosion : MonoBehaviour
@@ -14,15 +15,14 @@ public class explosion : MonoBehaviour
     {
         if(collision.tag == "Enemy" || collision.tag == "PlayerShip")
         {
-            if(collision.tag == "Enemy")
+            healthManager targetScript = collision.GetComponent<healthManager>();
+            if(targetScript != null)
             {
-                basicEnemy targetScript = collision.GetComponent<basicEnemy>();
                 targetScript.Damage(25);
             }
             else
             {
-                characterController targetScript = collision.GetComponent<characterController>();
-                targetScript.Damage(25);
+                Debug.LogError("somehow you forgor to add a healthManager to an object that should have it, go fix it you failure");
             }
         }
     }

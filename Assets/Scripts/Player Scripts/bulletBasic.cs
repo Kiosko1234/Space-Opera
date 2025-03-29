@@ -16,6 +16,8 @@ public class bulletBasic : MonoBehaviour
     {
         if(collision.tag == "Enemy")
             {
+            healthManager target = collision.GetComponent<healthManager>();
+            target.Damage(damage);
             Destroy(this.gameObject);
             }
         if(this.gameObject.tag == "BulletP" && collision.tag == "BulletE")

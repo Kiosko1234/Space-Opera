@@ -16,7 +16,6 @@ public class basicEnemy : MonoBehaviour
     public float decel;
     public float vel;
     Vector2 lookDir;
-    public int hp;
     public int movementStyle; //the way the enemy moves, 0 = basic, 1 = floaty 
     public float visionDistance;
     public int keepDistanceRange = 5; //the distance the ship will stop accel near player, so it doesnt crash
@@ -63,10 +62,7 @@ public class basicEnemy : MonoBehaviour
                 vel = Mathf.MoveTowards(vel, 0, decel*Time.deltaTime);
             }
         }
-        if (hp <= 0) //if dead, die
-        {
-            Die();
-        }
+
     }
 
     void FixedUpdate() 
@@ -84,26 +80,6 @@ public class basicEnemy : MonoBehaviour
         {
             rb.MovePosition(transform.position + direction3 * vel * Time.deltaTime);
         }
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision) //if hit, act like it
-    {
-        bulletBasic bulletDamage = collision.GetComponent<bulletBasic>();
-        if (collision.tag == "BulletP")
-        {
-            Damage(bulletDamage.damage);
-        }
-    }
-    public void Damage(int incomingDamage)
-    {
-        hp -= incomingDamage;
-    }
-
-    void Die() //if dying, die for real
-    {
-        levelManager.completion++;
-        Destroy(this.gameObject);
     }
 
 }

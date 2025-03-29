@@ -49,8 +49,8 @@ public class deathFog : MonoBehaviour
             yield return new WaitForSeconds(1); //do not move this into the if, it will break unity
             if(distanceToCenter > levelSize+5)
             {
-                characterController playerScrpt = player.GetComponent<characterController>();
-                playerScrpt.HP--;
+                healthManager playerScrpt = player.GetComponent<healthManager>();
+                playerScrpt.Damage(1);
                 // if(playerScrpt.HP <= 0)
                 // {
                 //     fogject.SetActive(false);

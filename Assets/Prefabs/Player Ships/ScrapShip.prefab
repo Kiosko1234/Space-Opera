@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8564025356046747200}
   - component: {fileID: 7705257959212531601}
   - component: {fileID: 897624816446929620}
+  - component: {fileID: 6794559981321483478}
   m_Layer: 0
   m_Name: ScrapShip
   m_TagString: PlayerShip
@@ -169,7 +170,7 @@ MonoBehaviour:
   velocity: 0
   freeze: 0
   fireParticlesPrefab: {fileID: 2497540659277325978, guid: 7a83c96dce9eaaa419d7da6082539209, type: 3}
-  HP: 50
+  healthScript: {fileID: 0}
 --- !u!114 &7705257959212531601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.79, y: 1.46}
   m_Direction: 0
+--- !u!114 &6794559981321483478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725096410631811731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9e5264d6309474b8d892e46fc28d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 50
+  isEnemy: 0
+  isPlayer: 1
+  isObject: 0
 --- !u!1 &6684640877360931147
 GameObject:
   m_ObjectHideFlags: 0
