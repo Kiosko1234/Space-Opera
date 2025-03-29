@@ -8,6 +8,7 @@ public class roombaExplosion : MonoBehaviour
 {
     public float explosionCounter;
     public int explosionTimer;
+    public GameObject ledLight;
     SpriteRenderer thisSprite;
     basicEnemy movementScript;
     bool activeDetonation;
@@ -20,7 +21,7 @@ public class roombaExplosion : MonoBehaviour
     {
         movementScript = this.gameObject.GetComponent<basicEnemy>();
         Debug.Log(movementScript + " loaded");
-        thisSprite = this.gameObject.GetComponent<SpriteRenderer>();
+        thisSprite = ledLight.gameObject.GetComponent<SpriteRenderer>();
         Debug.Log(thisSprite + " loaded");
         activeDetonation = false;
     }
