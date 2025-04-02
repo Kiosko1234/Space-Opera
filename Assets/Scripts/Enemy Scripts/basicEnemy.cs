@@ -22,6 +22,7 @@ public class basicEnemy : MonoBehaviour
 
     void Start()
     {
+        distanceToRPlyrPos = 10f; //this is here just because roomba thought the player was close enought to explode when spawning, this shouldnt mess with anything important and stops that issue
         GameObject player = GameObject.FindGameObjectWithTag("PlayerShip");
         playerRb = player.GetComponent<Rigidbody2D>();
     }

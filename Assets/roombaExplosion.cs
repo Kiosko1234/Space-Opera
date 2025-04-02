@@ -11,18 +11,18 @@ public class roombaExplosion : MonoBehaviour
     public GameObject ledLight;
     SpriteRenderer thisSprite;
     basicEnemy movementScript;
-    bool activeDetonation;
+    public bool activeDetonation;
     public GameObject explosionParticlesPrefab;
     public GameObject explosionHitbox;
-    bool exploded = false; 
+    bool exploded = false;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         movementScript = this.gameObject.GetComponent<basicEnemy>();
-        Debug.Log(movementScript + " loaded");
+        //Debug.Log(movementScript + " loaded");
         thisSprite = ledLight.gameObject.GetComponent<SpriteRenderer>();
-        Debug.Log(thisSprite + " loaded");
+        //Debug.Log(thisSprite + " loaded");
         activeDetonation = false;
     }
 
@@ -44,10 +44,10 @@ public class roombaExplosion : MonoBehaviour
             GameObject explosionParticles = Instantiate(explosionParticlesPrefab, this.gameObject.transform.position, new Quaternion(0,0,0,0));
             exploded = true;
         }
-        if(explosionCounter >= explosionTimer + Time.deltaTime * 5)
+        if(explosionCounter >= explosionTimer + Time.deltaTime * 12)
         {
-            Debug.Log("delete");
-            Destroy(this.gameObject);
+            healthManager hpMan = this.GetComponent<healthManager>();
+            hpMan.Die();
         }
     }
 }
