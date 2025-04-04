@@ -9836,6 +9836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestingNewMovement
       objectReference: {fileID: 0}
+    - target: {fileID: 5687176275386550050, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7371790607072550254, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
       propertyPath: m_Enabled
       value: 0

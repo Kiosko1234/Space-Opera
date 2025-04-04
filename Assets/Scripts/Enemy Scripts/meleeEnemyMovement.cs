@@ -15,7 +15,6 @@ public class meleeEnemyMovement : MonoBehaviour
     public float decel;
     public float vel;
     Vector2 lookDir;
-    public int hp;
     public bool hunting = false; 
     public float idleStrgh;
     public float visionDistance;
@@ -56,10 +55,6 @@ public class meleeEnemyMovement : MonoBehaviour
             }
         }
         
-        if (hp <= 0)
-        {
-            Die();
-        }
     }
 
     void FixedUpdate() 
@@ -68,20 +63,7 @@ public class meleeEnemyMovement : MonoBehaviour
         rb.rotation = angle; 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
-    {
-        bulletBasic bulletDamage = collision.GetComponent<bulletBasic>();
-        if (collision.tag == "BulletP")
-        {
-            hp -= bulletDamage.damage;
-        }
-    }
 
-    void Die()
-    {
-        levelManager.completion++;
-        Destroy(this.gameObject);
-    }
 
     // IEnumerator randomIdleDirCoroutine() //idle movement
     // {
