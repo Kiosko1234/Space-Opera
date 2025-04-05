@@ -852,14 +852,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ccbf0cafb8955449e324f8d0ed6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: treba urobit
+  planetName: Zegreus
   status: 
   level: Boss2
   levelNumber: 8
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
-  planetInfo: treba urobit
+  planetInfo: Zagreus is the largest planet in the Kalper-28B solar system. Its harsh
+    conditions and toxic air make it inhospitable to humanoid lifeforms, but that
+    hasn't stopped life from evolving on it anyways.  Even in these harsh conditions
+    large mining companies have been trying to develop it as a human habitat to house
+    their workers, and that is because of its largely profitable moons.
   progressRequirement: 4
 --- !u!58 &392013609
 CircleCollider2D:
@@ -957,8 +961,8 @@ Transform:
   m_GameObject: {fileID: 392013607}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.13, y: -1.76, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 7.13, y: -1.75, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.20912, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1043,14 +1047,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ccbf0cafb8955449e324f8d0ed6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: treba urobit
+  planetName: Persephone
   status: 
   level: Level6
   levelNumber: 6
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
-  planetInfo: Treba urobit
+  planetInfo: Like its sibling Demiter, Persephone is a small moon orbiting the planet
+    Zagreus. But as oppose to Demiter where its crystals were hidden under a grey
+    exiterior, Persephones pink and purple crystals are proudly covering its surfice.
+    These crystals have similar properties to the ones on Demiter and thanks to their
+    visibleness a mining initiative has been active since the moon was discovered.
   progressRequirement: 0
 --- !u!58 &399535782
 CircleCollider2D:
@@ -1192,7 +1200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shoot a planet to select it
+  m_text: Shoot a planet or moon to select it
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1322,7 +1330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01, y: 1.37}
+  m_AnchoredPosition: {x: 0.13, y: 1}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &454903787
@@ -1626,14 +1634,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ccbf0cafb8955449e324f8d0ed6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: teba urobit
+  planetName: Demiter
   status: 
   level: Level7
   levelNumber: 7
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
-  planetInfo: Treba urobit
+  planetInfo: Demiter is a small moon orbiting the planet Zagreus. Its mostly barren
+    rock but under the surface its full of vibrant white-ish crystals, from which
+    it gets its name. These crystals are a great energy source and therefore large
+    mining initiative has begun on the moon over the past few decades.
   progressRequirement: 0
 --- !u!58 &919884634
 CircleCollider2D:

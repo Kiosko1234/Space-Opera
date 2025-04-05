@@ -193,15 +193,15 @@ PrefabInstance:
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[3]
       value: 
-      objectReference: {fileID: 5687176275386550050, guid: 3bbff31efb0dd004fa69e45ec1374d66, type: 3}
+      objectReference: {fileID: 5687176275386550050, guid: 110d5f51bf8152c47a64d9d25990db34, type: 3}
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[7]
       value: 
-      objectReference: {fileID: 5687176275386550050, guid: 3bbff31efb0dd004fa69e45ec1374d66, type: 3}
+      objectReference: {fileID: 5687176275386550050, guid: 110d5f51bf8152c47a64d9d25990db34, type: 3}
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[10]
       value: 
-      objectReference: {fileID: 5687176275386550050, guid: 3bbff31efb0dd004fa69e45ec1374d66, type: 3}
+      objectReference: {fileID: 5687176275386550050, guid: 110d5f51bf8152c47a64d9d25990db34, type: 3}
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[11]
       value: 
@@ -209,11 +209,11 @@ PrefabInstance:
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[12]
       value: 
-      objectReference: {fileID: 5687176275386550050, guid: 3bbff31efb0dd004fa69e45ec1374d66, type: 3}
+      objectReference: {fileID: 5687176275386550050, guid: 110d5f51bf8152c47a64d9d25990db34, type: 3}
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[13]
       value: 
-      objectReference: {fileID: 5687176275386550050, guid: 3bbff31efb0dd004fa69e45ec1374d66, type: 3}
+      objectReference: {fileID: 5687176275386550050, guid: 110d5f51bf8152c47a64d9d25990db34, type: 3}
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[14]
       value: 
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: enemyBank.Array.data[16]
       value: 
-      objectReference: {fileID: 5687176275386550050, guid: 3bbff31efb0dd004fa69e45ec1374d66, type: 3}
+      objectReference: {fileID: 5687176275386550050, guid: 110d5f51bf8152c47a64d9d25990db34, type: 3}
     - target: {fileID: 5997842705443339759, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8395596

@@ -573,14 +573,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ccbf0cafb8955449e324f8d0ed6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: treba urobit
+  planetName: Delta Berialis
   status: 
   level: SolarSystem1
   levelNumber: 0
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
-  planetInfo: treba urobit
+  planetInfo: Delta Berialis is a solar system full of rich planets and even richer
+    corporations. Thanks to its large volume of recources and habitable planets it
+    has become a major trading port.
   progressRequirement: 0
 --- !u!58 &311775767
 CircleCollider2D:
@@ -849,14 +851,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ccbf0cafb8955449e324f8d0ed6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: treba urobit
+  planetName: Kalper 28B
   status: 
   level: SolarSystem2
   levelNumber: 0
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
-  planetInfo: treba urobit
+  planetInfo: Kelper 28B is mostly composed of baren desert planets lacking any life.
+    With a singular exception life on these planets is nonsensical and should be
+    avoided if possible.
   progressRequirement: 5
 --- !u!58 &392013609
 CircleCollider2D:
@@ -1047,7 +1051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shoot a planet to select it
+  m_text: Shoot Planet to enter Solar System
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3923,7 +3927,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.08, y: -3.46, z: 0}
-  m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
