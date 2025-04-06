@@ -576,7 +576,7 @@ MonoBehaviour:
   planetName: Delta Berialis
   status: 
   level: SolarSystem1
-  levelNumber: 0
+  levelNumber: 12
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}
@@ -854,7 +854,7 @@ MonoBehaviour:
   planetName: Kalper 28B
   status: 
   level: SolarSystem2
-  levelNumber: 0
+  levelNumber: 12
   levelSelectMenuScript: {fileID: 1507032484}
   moonInfo: {fileID: 11400000, guid: 106e5a67cb3b7394694bc628bd0376f9, type: 2}
   shipSO: {fileID: 11400000, guid: 47627e13364a9624e89abc85b52eb16d, type: 2}

@@ -139,6 +139,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
+      propertyPath: levelNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511533944466036260, guid: a0e2a57cf34ba0142ac1a9144f83d5da, type: 3}
       propertyPath: initialSpawn
       value: 3
       objectReference: {fileID: 0}
