@@ -16,7 +16,7 @@ public class slowturnEnemyMovement : MonoBehaviour
     public float accel;
     public float decel;
     public float vel;
-    Vector2 lookDir;
+    Vector3 lookDir;
     public int movementStyle; //the way the enemy moves, 0 = basic, 1 = floaty 
     public float visionDistance;
     public int keepDistanceRange = 5; //the distance the ship will stop accel near player, so it doesnt crash
@@ -70,21 +70,26 @@ public class slowturnEnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        lookDir = knownPlayerPos - rb.position; //get the direction the player is in
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f; //get the angle the player is in
-        if (rb.rotation < angle)
-        {
-            rb.rotation += rotSpeed * Time.fixedDeltaTime;
-        }
-        else if (rb.rotation > angle)
-        {
-            rb.rotation -= rotSpeed * Time.fixedDeltaTime;
-        }
-        //        if(rotSpeed > rotSpeed - angle || rotSpeed > angle - rotSpeed)
-        //        {
-        //            rb.rotation = angle;
-        //        }
-        Vector2 finalLookDir = new Vector2(Mathf.Sin(rb.rotation * Mathf.Deg2Rad), Mathf.Cos(rb.rotation * Mathf.Deg2Rad)); //convert the angle back to vector
+        lookDir = (knownPlayerPos - rb.position).normalized; //get the direction the player is in
+        float rotationSteer = Vector3.Cross(transform.up, lookDir).z;
+        rb.rotation += rotSpeed * rotationSteer * Time.fixedDeltaTime;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f; //get the angle the player is in
+
+        // if (rb.rotation < angle)
+        // {
+        //     rb.rotation += rotSpeed * Time.fixedDeltaTime;
+        // }
+        // else if (rb.rotation > angle)
+        // {
+        //     rb.rotation -= rotSpeed * Time.fixedDeltaTime;
+        // }
+        // // if(rotSpeed*Time.fixedDeltaTime > rotSpeed*Time.fixedDeltaTime - angle || rotSpeed*Time.fixedDeltaTime > angle - rotSpeed*Time.fixedDeltaTime)
+        // // {
+        // //     //rb.rotation = angle;
+        // //     Debug.Log(rotSpeed*Time.fixedDeltaTime - angle);
+        // //     Debug.Log(angle - rotSpeed*Time.fixedDeltaTime);
+        // // }
+        Vector2 finalLookDir = new Vector2(Mathf.Cos((rb.rotation+90) * Mathf.Deg2Rad), Mathf.Sin((rb.rotation+90) * Mathf.Deg2Rad)); //convert the angle back to vector
         MoveCharacter(finalLookDir);
 
     }

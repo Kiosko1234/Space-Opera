@@ -9792,13 +9792,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 771501566673694744, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4367108925585880140, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.654622
+      value: 5.91
       objectReference: {fileID: 0}
     - target: {fileID: 4367108925585880140, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.6123466
+      value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 4367108925585880140, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9873,14 +9877,14 @@ MonoBehaviour:
   rb: {fileID: 1673260622}
   playerRb: {fileID: 0}
   distanceToRPlyrPos: 0
-  maxSpeed: 2
-  accel: 1
-  decel: 1
+  maxSpeed: 7
+  accel: 5
+  decel: 5
   vel: 0
   movementStyle: 0
   visionDistance: 20
-  keepDistanceRange: 5
-  rotSpeed: 0
+  keepDistanceRange: 3
+  rotSpeed: 100
 --- !u!50 &1673260622 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 771501566673694744, guid: 809e2cf1eadc88643a01709f21acc5e4, type: 3}
