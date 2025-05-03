@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class basicEnemyShooting : MonoBehaviour
@@ -9,24 +10,57 @@ public class basicEnemyShooting : MonoBehaviour
     public int bulletsPerShot;
     public int bulletSpeed;
     public float fireRate;
-    private float fireTimer;
-    basicEnemy DistanceToTarget;
-
+    public float fireTimer;
+    float DistanceToTarget;
+    private Rigidbody2D rb;
+    private Rigidbody2D playerRb;
+    public float maxFireDistance = 5f;
+    // public float raycastOffset;
+    public GameObject raycastOrigin; 
     void Start()
     {
-        DistanceToTarget = this.GetComponent<basicEnemy>();
+        GameObject player = GameObject.FindGameObjectWithTag("PlayerShip");
+        playerRb = player.GetComponent<Rigidbody2D>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
+
     }
     void Update()
     {
-        if (DistanceToTarget.distanceToRPlyrPos <= 5 && fireTimer <= 0f)
-        {
-            Shoot(bulletsPerShot);
-            fireTimer = fireRate;
-        }else
-        {
-            fireTimer -= Time.deltaTime;
-        }
+        // Vector2 customOffset = transform.up * 0.5f + transform.right * 0.2f;
+        //Vector2 raycastOrigin = Quaternion.AngleAxis(rb.gameObject.transform.rotation.eulerAngles.z, rb.position) * new Vector2(rb.position.x, rb.position.y + raycastOffset); //broken
+        // Vector2 origin = (Vector2)transform.position * customOffset;
+        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin.transform.position, transform.up, maxFireDistance);
+        // Debug.DrawRay(raycastOrigin.transform.position, transform.up, Color.yellow, 0.05f);
 
+           // if (hit.collider != null && hit.collider.gameObject != this.gameObject)
+            //{
+                    //Debug.Log("ye");
+            //}
+            if(fireTimer <= 0f && hit.collider != null)
+            {
+                if(hit.collider.gameObject.tag == "PlayerShip")
+                {
+                    Shoot(bulletsPerShot);
+                    fireTimer = fireRate;
+                }
+            }
+            else
+            {
+                Debug.Log("no");
+                fireTimer -= Time.deltaTime;
+            }
+        // if(hit && hit.transform.CompareTag("PlayerShip"))
+        // {
+        // }
+        // DistanceToTarget = Vector2.Distance(rb.position, playerRb.position); //get distance between player and this enemy
+        // if (DistanceToTarget <= maxFireDistance && fireTimer <= 0f)
+        // {
+        //     Shoot(bulletsPerShot);
+        //     fireTimer = fireRate;
+        // }else
+        // {
+        //     fireTimer -= Time.deltaTime;
+        // }
     }    
     
     void Shoot(int count)
