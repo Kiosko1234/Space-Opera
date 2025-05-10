@@ -8,13 +8,19 @@ public class healthManager : MonoBehaviour
     public bool isEnemy;
     public bool isPlayer;
     public bool isObject;
+    private SpriteRenderer sr;
+    public Color blinkColour = Color.red;
+    public float blinkDur = 0.5f;
+    private Color ogColour;
+    public Animator mainCamera; 
+    public string camShakeStateName = "CameraShake";
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        sr = this.GetComponent<SpriteRenderer>();
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+        Debug.Log(mainCamera);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +33,14 @@ public class healthManager : MonoBehaviour
     public void Damage(int incomingDamage) //take damage
     {
         hp -= incomingDamage;
+        if(isEnemy)
+        {
+            DamageBlink();
+        }
+        if(isPlayer)
+        {
+            ScreenShake();
+        }
     }
 
     public void Die()
@@ -35,6 +49,27 @@ public class healthManager : MonoBehaviour
         {
             levelManager.completion++;
             Destroy(this.gameObject);
+        }
+    }
+
+    private void DamageBlink()
+    {
+        StopAllCoroutines();
+        StartCoroutine(DamageBlinkTimer());
+    }
+    private IEnumerator DamageBlinkTimer()
+    {
+        ogColour = sr.color;
+        sr.color = blinkColour;
+        yield return new WaitForSeconds(blinkDur);
+        sr.color = ogColour;
+    }
+
+    private void ScreenShake()
+    {
+        if(mainCamera != null)
+        {  
+            mainCamera.Play(camShakeStateName); 
         }
     }
 }
