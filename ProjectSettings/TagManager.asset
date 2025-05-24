@@ -12,6 +12,8 @@ TagManager:
   - StaticHurter
   - GottenRewardIndicator
   - Minimap
+  - Shield
+  - DamagableObject
   layers:
   - Default
   - TransparentFX

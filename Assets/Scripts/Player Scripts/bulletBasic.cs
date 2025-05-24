@@ -14,7 +14,7 @@ public class bulletBasic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if(collision.tag == "Enemy")
+        if(collision.tag == "Enemy" || collision.tag == "DamagableObject")
             {
             healthManager target = collision.GetComponent<healthManager>();
             target.Damage(damage);
@@ -26,6 +26,7 @@ public class bulletBasic : MonoBehaviour
             Destroy(this.gameObject);
         if(collision.tag == "Planet")
             Destroy(this.gameObject);
+
 
     }
 }

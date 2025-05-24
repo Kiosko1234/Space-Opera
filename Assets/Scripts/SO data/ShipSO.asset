@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c389e51af4e9894fa5bb50e22cb7cc3, type: 3}
   m_Name: ShipSO
   m_EditorClassIdentifier: 
-  _ship: Scrap
+  _ship: Medium
   _shipProgression: 0
   _gameProgression: 0

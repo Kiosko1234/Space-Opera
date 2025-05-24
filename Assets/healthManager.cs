@@ -19,6 +19,7 @@ public class healthManager : MonoBehaviour
     {
         sr = this.GetComponent<SpriteRenderer>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+        ogColour = sr.color;
         Debug.Log(mainCamera);
     }
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class healthManager : MonoBehaviour
     public void Damage(int incomingDamage) //take damage
     {
         hp -= incomingDamage;
-        if(isEnemy)
+        if(isEnemy || isObject)
         {
             DamageBlink();
         }
@@ -57,9 +58,12 @@ public class healthManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(DamageBlinkTimer());
     }
-    private IEnumerator DamageBlinkTimer()
+    private IEnumerator DamageBlinkTimer() //blink after getting hit
     {
-        ogColour = sr.color;
+        if(sr.color != blinkColour) //this is here so it doesnt get stuck on the blink colour
+        {
+            ogColour = sr.color;
+        }
         sr.color = blinkColour;
         yield return new WaitForSeconds(blinkDur);
         sr.color = ogColour;
