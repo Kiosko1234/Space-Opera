@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1416799262470722906}
   - component: {fileID: 3833017372761806076}
   - component: {fileID: 4786965258355306507}
+  - component: {fileID: 2766666191028622125}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Shield
@@ -142,6 +143,18 @@ MonoBehaviour:
   blinkDur: 0.2
   mainCamera: {fileID: 0}
   camShakeStateName: CameraShake
+--- !u!114 &2766666191028622125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321281866574789098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4efaf6f17b5553409f5996db7439474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780553348839004323
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,13 +5305,13 @@ MonoBehaviour:
   playerRb: {fileID: 0}
   distanceToRPlyrPos: 0
   maxSpeed: 12
-  accel: 5
-  decel: 5
+  accel: 4
+  decel: 12
   vel: 0
   movementStyle: 0
   visionDistance: 20
-  keepDistanceRange: 3
-  rotSpeed: 120
+  keepDistanceRange: 4
+  rotSpeed: 130
 --- !u!114 &616379933244926486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5314,6 +5327,7 @@ MonoBehaviour:
   shield: {fileID: 1321281866574789098}
   isShieldActive: 1
   shieldRechargeTimer: 10
+  shieldDetection: {fileID: 2766666191028622125}
 --- !u!1 &5795707497801127887
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,6 +122,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15911532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1321281866574789098, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
+  m_PrefabInstance: {fileID: 130207641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15911537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15911532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4efaf6f17b5553409f5996db7439474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &15911538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2766666191028622125, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
+  m_PrefabInstance: {fileID: 130207641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15911532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4efaf6f17b5553409f5996db7439474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &130207641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 616379933244926486, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
+      propertyPath: shieldDetection
+      value: 
+      objectReference: {fileID: 15911538}
     - target: {fileID: 1321281866574789098, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
       propertyPath: m_TagString
       value: DamagableObject
@@ -207,6 +239,14 @@ PrefabInstance:
       value: ShieldEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 5909221515619389258, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
+      propertyPath: accel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909221515619389258, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
+      propertyPath: decel
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909221515619389258, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
       propertyPath: rotSpeed
       value: 130
       objectReference: {fileID: 0}
@@ -217,7 +257,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1321281866574789098, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 15911537}
   m_SourcePrefab: {fileID: 100100000, guid: ca2ce94052ab8e340ab9d217a51c8288, type: 3}
 --- !u!1 &179152608
 GameObject:

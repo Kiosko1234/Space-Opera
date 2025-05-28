@@ -7,6 +7,7 @@ public class shieldEnemyScript : MonoBehaviour
     public GameObject shield;   
     public bool isShieldActive;
     public float shieldRechargeTimer = 10f;
+    public shieldDetection shieldDetection;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +23,7 @@ public class shieldEnemyScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "BulletP" && isShieldActive)
+        if(collision.tag == "BulletP" && isShieldActive && collision != shieldDetection.collis)
         {
             StartCoroutine( ShieldRecharge());
         }
