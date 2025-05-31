@@ -4966,7 +4966,6 @@ MonoBehaviour:
   accel: 5
   decel: 5
   vel: 0
-  hp: 5
   hunting: 0
   idleStrgh: 0.7
   visionDistance: 100
@@ -5021,6 +5020,10 @@ MonoBehaviour:
   isEnemy: 1
   isPlayer: 0
   isObject: 0
+  blinkColour: {r: 1, g: 0, b: 0, a: 1}
+  blinkDur: 0.5
+  mainCamera: {fileID: 0}
+  camShakeStateName: CameraShake
 --- !u!1 &7446773580146184288
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class basicEnemyShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public int bulletsPerShot;
     public int bulletSpeed;
-    public float fireRate;
+    public float fireRate = 3;
     public float fireTimer;
     float DistanceToTarget;
     private Rigidbody2D rb;
@@ -30,25 +30,25 @@ public class basicEnemyShooting : MonoBehaviour
         //Vector2 raycastOrigin = Quaternion.AngleAxis(rb.gameObject.transform.rotation.eulerAngles.z, rb.position) * new Vector2(rb.position.x, rb.position.y + raycastOffset); //broken
         // Vector2 origin = (Vector2)transform.position * customOffset;
         RaycastHit2D hit = Physics2D.Raycast(raycastOrigin.transform.position, transform.up, maxFireDistance);
-        // Debug.DrawRay(raycastOrigin.transform.position, transform.up, Color.yellow, 0.05f);
+//         Debug.DrawRay(raycastOrigin.transform.position, transform.up, Color.yellow, 0.05f);
 
            // if (hit.collider != null && hit.collider.gameObject != this.gameObject)
             //{
                     //Debug.Log("ye");
             //}
-            if(fireTimer <= 0f && hit.collider != null)
+        if(fireTimer <= 0 && hit.collider != null)
+        {
+            if(hit.collider.gameObject.tag == "PlayerShip")
             {
-                if(hit.collider.gameObject.tag == "PlayerShip")
-                {
-                    Shoot(bulletsPerShot);
-                    fireTimer = fireRate;
-                }
+                Shoot(bulletsPerShot);
+                fireTimer = fireRate;
             }
-            else
-            {
-                Debug.Log("no");
-                fireTimer -= Time.deltaTime;
-            }
+        }
+        else
+        {
+            Debug.Log("no");
+            fireTimer -= Time.deltaTime;
+        }
         // if(hit && hit.transform.CompareTag("PlayerShip"))
         // {
         // }

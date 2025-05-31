@@ -9729,6 +9729,7 @@ Transform:
   - {fileID: 1199915017495180089}
   - {fileID: 6476592955671750247}
   - {fileID: 9214576832421988337}
+  - {fileID: 1564257431245116975}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2736838424416272193
@@ -9899,6 +9900,9 @@ MonoBehaviour:
   bulletsPerShot: 1
   bulletSpeed: 995
   fireRate: 1.2
+  fireTimer: 0
+  maxFireDistance: 5
+  raycastOrigin: {fileID: 7265550856364396357}
 --- !u!114 &9070678003889265897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9915,3 +9919,38 @@ MonoBehaviour:
   isEnemy: 1
   isPlayer: 0
   isObject: 0
+  blinkColour: {r: 1, g: 0, b: 0, a: 1}
+  blinkDur: 0.5
+  mainCamera: {fileID: 0}
+  camShakeStateName: CameraShake
+--- !u!1 &7265550856364396357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564257431245116975}
+  m_Layer: 0
+  m_Name: Raycast Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1564257431245116975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265550856364396357}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00517245, y: 1.03, z: -0.0124987755}
+  m_LocalScale: {x: 1.7241379, y: 1.7241379, z: 1.7241379}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4367108925585880140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
