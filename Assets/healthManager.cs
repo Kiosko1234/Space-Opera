@@ -10,7 +10,7 @@ public class healthManager : MonoBehaviour
     public bool isObject;
     private SpriteRenderer sr;
     public Color blinkColour = Color.red;
-    public float blinkDur = 0.5f;
+    public float blinkDur = 0.1f;
     private Color ogColour;
     public Animator mainCamera; 
     public string camShakeStateName = "CameraShake";

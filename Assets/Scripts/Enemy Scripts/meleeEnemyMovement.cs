@@ -19,6 +19,7 @@ public class meleeEnemyMovement : MonoBehaviour
     public float idleStrgh;
     public float visionDistance;
 
+
     void Start()
     { //load up the player
         GameObject player = GameObject.FindGameObjectWithTag("PlayerShip");

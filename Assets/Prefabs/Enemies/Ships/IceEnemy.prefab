@@ -5119,7 +5119,7 @@ MonoBehaviour:
   isEnemy: 1
   isPlayer: 0
   isObject: 0
-  blinkColour: {r: 1, g: 0, b: 0, a: 1}
-  blinkDur: 0.5
+  blinkColour: {r: 1, g: 0.6179246, b: 0.6179246, a: 1}
+  blinkDur: 0.1
   mainCamera: {fileID: 0}
   camShakeStateName: CameraShake

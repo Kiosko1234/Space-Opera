@@ -400,6 +400,7 @@ MonoBehaviour:
   explosionCounter: 0
   explosionTimer: 3
   ledLight: {fileID: 1709320289089368575}
+  activeDetonation: 0
   explosionParticlesPrefab: {fileID: 8139984372002391042, guid: 29e0c76a979e7b8429205e7848cf0a62, type: 3}
   explosionHitbox: {fileID: 2184607644191272895}
 --- !u!114 &1328597366934142522
@@ -418,6 +419,10 @@ MonoBehaviour:
   isEnemy: 1
   isPlayer: 0
   isObject: 0
+  blinkColour: {r: 1, g: 0.740566, b: 0.740566, a: 1}
+  blinkDur: 0.1
+  mainCamera: {fileID: 0}
+  camShakeStateName: CameraShake
 --- !u!1 &8957267911982731560
 GameObject:
   m_ObjectHideFlags: 0

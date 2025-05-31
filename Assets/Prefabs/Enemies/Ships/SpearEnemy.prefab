@@ -4844,6 +4844,7 @@ GameObject:
   - component: {fileID: 7593031006930644287}
   - component: {fileID: 947780966843381209}
   - component: {fileID: -4594507637325222719}
+  - component: {fileID: -2357600012745738727}
   m_Layer: 0
   m_Name: SpearEnemy
   m_TagString: Enemy
@@ -4954,7 +4955,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2597239045327500503}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b76baa02339c6c498be8140518024c3, type: 3}
   m_Name: 
@@ -4998,7 +4999,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.33}
@@ -5020,6 +5021,31 @@ MonoBehaviour:
   isEnemy: 1
   isPlayer: 0
   isObject: 0
+  blinkColour: {r: 1, g: 0.6933962, b: 0.6933962, a: 1}
+  blinkDur: 0.1
+  mainCamera: {fileID: 0}
+  camShakeStateName: CameraShake
+--- !u!114 &-2357600012745738727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2597239045327500503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c088bd1bd4e314699b420814187003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7744161992696017352}
+  playerRb: {fileID: 0}
+  distanceToRPlyrPos: 0
+  maxSpeed: 40
+  vel: 0
+  hunting: 0
+  restingDelay: 1
+  huntingDelay: 0.3
+  visionDistance: 100
 --- !u!1 &7446773580146184288
 GameObject:
   m_ObjectHideFlags: 0
