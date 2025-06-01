@@ -14,6 +14,7 @@ public class healthManager : MonoBehaviour
     private Color ogColour;
     public Animator mainCamera; 
     public string camShakeStateName = "CameraShake";
+    public bool explosionImunity = false;
 
     void Start()
     {
@@ -31,8 +32,12 @@ public class healthManager : MonoBehaviour
         }
     }
 
-    public void Damage(int incomingDamage) //take damage
+    public void Damage(int incomingDamage, string dmgType) //take damage
     {
+        if (explosionImunity && dmgType == "explosion")
+        {
+            return;
+        }
         hp -= incomingDamage;
         if(isEnemy || isObject)
         {

@@ -50,7 +50,7 @@ public class deathFog : MonoBehaviour
             if(distanceToCenter > levelSize+5)
             {
                 healthManager playerScrpt = player.GetComponent<healthManager>();
-                playerScrpt.Damage(1);
+                playerScrpt.Damage(1, "deathFog");
                 // if(playerScrpt.HP <= 0)
                 // {
                 //     fogject.SetActive(false);

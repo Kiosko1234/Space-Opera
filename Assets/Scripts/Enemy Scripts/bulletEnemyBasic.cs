@@ -19,7 +19,7 @@ public class bulletEnemyBasic : MonoBehaviour
         if(collision.tag == "PlayerShip")
         {
             healthManager target = collision.GetComponent<healthManager>();
-            target.Damage(damage);
+            target.Damage(damage, "bullet");
             Destroy(this.gameObject);
         }
     }

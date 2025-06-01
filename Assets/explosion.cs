@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class explosion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +14,7 @@ public class explosion : MonoBehaviour
             healthManager targetScript = collision.GetComponent<healthManager>();
             if(targetScript != null)
             {
-                targetScript.Damage(25);
+                targetScript.Damage(damage, "explosion");
             }
             else
             {

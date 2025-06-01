@@ -5010,7 +5010,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2673181426155830541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5095,7 +5095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonChambers:
   - {fileID: 9214576832421988337}
-  bulletPrefab: {fileID: 1292205297464134464, guid: 31c7196f29b816049982150829a100bd, type: 3}
+  bulletPrefab: {fileID: 1292205297464134464, guid: c8a787fed129aee4daf56f9b491d54f9, type: 3}
   bulletsPerShot: 1
   bulletSpeed: 1000
   fireRate: 0.7
@@ -5122,3 +5122,4 @@ MonoBehaviour:
   blinkDur: 0.1
   mainCamera: {fileID: 0}
   camShakeStateName: CameraShake
+  explosionImunity: 1

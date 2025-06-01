@@ -99,7 +99,7 @@ public class characterController : MonoBehaviour
         }
         if(collision.tag == "StaticHurter")
         {
-            healthScript.Damage(5);
+            healthScript.Damage(5, "static");
         }
     }
 
@@ -113,7 +113,7 @@ public class characterController : MonoBehaviour
         int poisonCounter = 0;
         while(poisonCounter < 6)
         {
-            healthScript.Damage(poisonDmg);
+            healthScript.Damage(poisonDmg, "poison");
             yield return new WaitForSeconds(0.5f);
             poisonCounter++;
         }   

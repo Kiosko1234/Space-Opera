@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExplosiveBullet : MonoBehaviour
 {
     public float explosionCounter;
-    public int explosionTimer;
+    public float explosionTimer;
     public GameObject explosionPrefab;
     bool exploded = false;
 
@@ -20,12 +20,12 @@ public class ExplosiveBullet : MonoBehaviour
 
     void Explosion()
     {
-        GameObject explosion = Instantiate(explosionPrefab, this.gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject explosion = Instantiate(explosionPrefab, new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y,0), new Quaternion(0, 0, 0, 0));
         Destroy(this.gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)  
     {
-        if (collision.tag == "PlayerShip" || collision.tag == "PBullet")
+        if (collision.tag == "PlayerShip" || collision.tag == "BulletP")
         {
             Explosion();
         }

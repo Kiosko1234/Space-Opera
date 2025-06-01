@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 310634063513367434}
   - component: {fileID: 7669023141819957233}
   - component: {fileID: 3934705628355772758}
-  - component: {fileID: 4065989674818633889}
+  - component: {fileID: 4276274214423819329}
   - component: {fileID: 6590909839709640803}
   m_Layer: 0
   m_Name: ExplodingEnemyBullet
@@ -150,7 +150,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &4065989674818633889
+--- !u!114 &4276274214423819329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee87d411503300c49bece186b71cbdee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   freezeEff: 0
   poison: 0
 --- !u!114 &6590909839709640803
@@ -177,3 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebeab327943aece41ad3b70f2d935900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionCounter: 0
+  explosionTimer: 0.5
+  explosionPrefab: {fileID: 3790757952084922751, guid: 98f02d21dc6686d4096429f0e4e1034a, type: 3}
