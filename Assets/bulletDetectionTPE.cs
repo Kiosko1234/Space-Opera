@@ -15,6 +15,7 @@ public class bulletDetectionTPE : MonoBehaviour
         if (collision.gameObject.tag == "BulletP")
         {
             te.Leport();
+            //Destroy(this.gameObject);
         }
     }
 }

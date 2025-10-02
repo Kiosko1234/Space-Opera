@@ -11,7 +11,7 @@ public class teleportEnemy : MonoBehaviour
     Transform trans;
     private Vector2 vectorToPlayer;
 
-    public Object tParticles;
+    public GameObject tParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,10 @@ public class teleportEnemy : MonoBehaviour
 
     public void Leport()
     {
-        trans.position += new Vector3(vectorToPlayer.x * 2,vectorToPlayer.y * 2, 0);
+        Instantiate(tParticles, trans.position, new Quaternion(0, 0, 0, 0));
+        trans.position += new Vector3(vectorToPlayer.x * 2, vectorToPlayer.y * 2, 0);
+        Instantiate(tParticles, new Vector3(trans.position.x, trans.position.y, 1), new Quaternion(0, 0, 0, 0));
+        //teleported = true;
     }
 
 }

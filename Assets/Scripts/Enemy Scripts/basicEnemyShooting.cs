@@ -48,7 +48,6 @@ public class basicEnemyShooting : MonoBehaviour
         }
         else
         {
-            Debug.Log("no");
             fireTimer -= Time.deltaTime;
         }
         // if(hit && hit.transform.CompareTag("PlayerShip"))
