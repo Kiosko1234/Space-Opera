@@ -8,9 +8,10 @@ public class bulletEnemyBasic : MonoBehaviour
     public int damage;
     public int freezeEff;
     public int poison;
+    public float liveTime = 1f;
     void Start()
     {
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject, liveTime);
     }
 
 
