@@ -9928,6 +9928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DemomanEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7371790607072550254, guid: afad34ef85211ba45bd0a697b92b2794, type: 3}
+      propertyPath: dropoff
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

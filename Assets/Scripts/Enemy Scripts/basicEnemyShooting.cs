@@ -11,10 +11,12 @@ public class basicEnemyShooting : MonoBehaviour
     public int bulletSpeed;
     public float fireRate = 3;
     public float fireTimer;
+    public float maxFireDistance = 5f;
+    public float dropoff = 0;
+
     float DistanceToTarget;
     private Rigidbody2D rb;
     private Rigidbody2D playerRb;
-    public float maxFireDistance = 5f;
     // public float raycastOffset;
     public GameObject raycastOrigin; 
     void Start()
@@ -70,6 +72,7 @@ public class basicEnemyShooting : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, cannonChambers[k].position, cannonChambers[k].rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(cannonChambers[k].up * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            rb.drag = dropoff;
         }
     }
 
