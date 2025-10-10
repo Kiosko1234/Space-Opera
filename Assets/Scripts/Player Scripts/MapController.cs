@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MapController : MonoBehaviour
@@ -10,8 +11,9 @@ public class MapController : MonoBehaviour
     void Start()
     {
         //     minmap = GameObject.FindGameObjectWithTag("Minimap");
-        objektiv = this.gameObject.GetComponent<Camera>();
-        df = GameObject.FindGameObjectWithTag("Canvas").GetComponent<deathFog>();
+        objektiv = minmap.GetComponent<Camera>();
+        df = this.gameObject.GetComponent<deathFog>();
+        objektiv.orthographicSize = 26 * (df.levelSize / 20);
     }
     // Update is called once per frame
     void Update()

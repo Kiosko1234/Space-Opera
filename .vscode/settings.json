@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Space-Opera.sln"
+    "dotnet.defaultSolution": "Space Opera.sln"
 }
