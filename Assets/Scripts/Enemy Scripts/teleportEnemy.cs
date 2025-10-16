@@ -37,7 +37,7 @@ public class teleportEnemy : MonoBehaviour
         Instantiate(tParticles, trans.position, new Quaternion(0, 0, 0, 0));
         trans.position += new Vector3(vectorToPlayer.x * 2, vectorToPlayer.y * 2, 0);
         Instantiate(tParticles, new Vector3(trans.position.x, trans.position.y, 1), new Quaternion(0, 0, 0, 0));
-        //teleported = true;
+        teleported = true;
     }
 
 }
